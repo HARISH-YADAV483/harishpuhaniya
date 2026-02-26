@@ -94,7 +94,7 @@ function Home() {
             const data = await response.json();
 
             if (response.ok) {
-                alert(data.message || "Contact information sent successfully!");
+                alert(data.message || "Thanks for Submission!");
                 // Optionally clear the form
                 nameref.current.value = "";
                 lastnameref.current.value = "";
