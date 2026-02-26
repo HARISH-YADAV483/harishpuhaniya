@@ -1,0 +1,179 @@
+/* Education Section Styles */
+.parento {
+    background-color: rgba(243, 242, 242, 0.9);
+    width: 100%;
+    min-height: 100vh; 
+}
+
+.loading {
+    width: 0%;
+    background-color: rgb(3, 141, 10);
+    margin-left: 23px;
+}
+
+.maal.visible .loading {
+    animation: fillWidth 1.5s ease-out forwards;
+}
+
+@keyframes fillWidth {
+    from {
+        width: 0%;
+    }
+    to {
+        width: var(--target-width);
+    }
+}
+@media only screen and (min-width:1024px) {
+    .photu {
+        margin-left: auto;
+        margin-right: auto;
+        width: 800px;
+        margin-top: 0px;
+        margin-top: 15px;
+    }
+
+    .headphotu {
+        margin-left: auto;
+        margin-right: auto;
+        width: 800px;
+        margin-top: 0px;
+    }
+
+    .educations {
+        margin-top: 123px;
+        width: 100vw;
+        /* background-color: rgba(41, 50, 63, 0.7); */
+        height: max-content;
+    }
+
+    .educations h1 {
+        font-size: 64px;
+        font-weight: 300;
+        padding-top: 10px;
+        color: #000000;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .educations h2 {
+        font-size: 34px;
+        font-weight: 100;
+        color: #373636;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .subjects {
+        margin-right: 10vw;
+        width: 80vw;
+        margin-left: 10vw;
+        margin-top: 34px;
+        color: #0a0a0a;
+    }
+
+    .name {
+        font-size: 33px;
+    }
+
+    .loading {
+        height: 20px;
+    }
+
+    .maal {
+        margin-top: 23px;
+    }
+
+    .flex {
+        display: flex;
+        align-items: center;
+        gap: 23px;
+    }
+
+    .count {
+        color: rgb(7, 7, 7);
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width:1024px) {
+
+
+    .photu {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90vw;
+        margin-top: 0px;
+        margin-top: 15px;
+    }
+
+    .headphotu {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90vw;
+        margin-top: 0px;
+    }
+
+    .educations {
+        /* background-color: rgb(60, 60, 59, 0.7); */
+        width: 100vw;
+        overflow-x: hidden;
+        margin-top: 30px;
+    }
+
+    .headings {
+        font-size: 1.9rem;
+        font-weight: 300;
+        color: #2d2d2d;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding-top: 15px;
+    }
+
+    .educations h1 {
+        font-size: 1.7rem;
+        margin-top: 23px;
+        font-weight: 900;
+        color: #060606;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .educations h2 {
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: #2d2d2d;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .subjects {
+        margin-right: 5vw;
+        width: 90vw;
+        margin-left: 5vw;
+        margin-top: 34px;
+        color: #090909;
+    }
+
+    .name {
+        font-size: 1rem;
+    }
+
+    .loading {
+        height: 10px;
+    }
+
+    .maal {
+        margin-top: 13px;
+    }
+
+    .flex {
+        display: flex;
+        align-items: center;
+        gap: 23px;
+    }
+
+    .count {
+        color: rgb(13, 13, 13);
+        font-size: 22px;
+    }
+}

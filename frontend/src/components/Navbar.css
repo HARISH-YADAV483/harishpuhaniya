@@ -1,0 +1,112 @@
+.blacki{
+    color : black !important;
+    text-decoration: none !important;
+}
+@media only screen and (min-width: 1024px) {
+    .navbar {
+        margin-bottom: 0px !important;
+    }
+
+    .righto {
+        display: flex;
+    }
+
+    .righto2 {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .navbar {
+        margin-bottom: 0px !important;
+    }
+
+    .righto {
+        display: none;
+    }
+}
+
+.logo {
+    height: 40px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #f2f2f2;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 40px;
+    align-items: center;
+    color: black;
+    }
+
+    .righto {
+        gap: 20px;
+        font-size: 18px;
+    }
+
+    .lefto {
+        font-size: 25px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .circle {
+        width: 30px;
+        height: 30px;
+        background-color: rgb(255, 204, 0);
+        border-radius: 50%;
+    }
+
+    .nav-link {
+        color: rgb(66, 66, 66);
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .nav-link:hover {
+        color: #e59b07;
+    }
+
+    .menubar {
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        background-color: #f2f2f2;
+        z-index: 100;
+        top: -100vh;
+        left: 0;
+        transition: top 0.5s ease-in-out;
+    }
+
+    .menubar.active {
+        top: 0;
+    }
+
+    .logi {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+    }
+
+    .linlu {
+        display: flex;
+        flex-direction: column;
+        margin-top: 80px;
+        margin-left: 70px;
+        font-size: 34px;
+    }
+
+    .nav-lin {
+        text-decoration: none;
+        color: #1a1a1a;
+    }
