@@ -81,7 +81,9 @@ function Home() {
         }
 
         try {
-            const response = await fetch("http://localhost:5002/api/contact", {
+            const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5002";
+            const response = await fetch(`${API_BASE_URL}/api/contact`, {
+
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
