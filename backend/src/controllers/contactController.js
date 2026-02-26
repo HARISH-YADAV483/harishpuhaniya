@@ -18,7 +18,7 @@ exports.createContact = async (req, res) => {
 
         await newContact.save();
 
-        res.status(201).json({ message: "Contact information saved successfully!" });
+        res.status(201).json({ message: "Thanks for submission!" });
     } catch (error) {
         console.error("Error saving contact:", error);
         res.status(500).json({ message: "Internal server error." });
