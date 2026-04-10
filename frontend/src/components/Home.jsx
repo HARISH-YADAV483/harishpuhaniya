@@ -66,6 +66,8 @@ function Home() {
     const [number, setnumber] = useState("");
     const [email, setemail] = useState("");
     const [message, setmessage] = useState("");
+    const [isImageLoaded, setIsImageLoaded] = useState(false);
+    
     const handleSend = async () => {
         const formData = {
             name: nameref.current.value,
@@ -118,8 +120,13 @@ function Home() {
     return (
         <div className="homee">
             <div className="profile animate-fade-in-up">
-                <div className="imgg animate-fade-in-up delay-1">
-                    <img src={logu} alt="ScamShield" className="logu" />
+                <div className={`imgg animate-fade-in-up delay-1 ${!isImageLoaded ? 'skeleton-loading' : ''}`}>
+                    <img 
+                        src={logu} 
+                        alt="ScamShield" 
+                        className={`logu ${isImageLoaded ? 'loaded' : 'loading'}`} 
+                        onLoad={() => setIsImageLoaded(true)} 
+                    />
                 </div>
                 <div className="para">
                     <h1 className="hello animate-fade-in-up delay-2">Hello</h1>
