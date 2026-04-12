@@ -6,6 +6,7 @@ import roject from "../assets/imagecopy.png";
 import oject from "../assets/imagcopy.png";
 import ject from "../assets/imagopy.png";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import "./Home.css";
 import "./graphy.css";
@@ -62,6 +63,8 @@ function Home() {
     const messageref = useRef(null);
 
     const [name, setname] = useState("");
+    const [load, setload] = useState(false);
+    const [submission, setsubmission] = useState("");
     const [lastname, setlastname] = useState("");
     const [number, setnumber] = useState("");
     const [email, setemail] = useState("");
@@ -69,6 +72,7 @@ function Home() {
     const [isImageLoaded, setIsImageLoaded] = useState(false);
     
     const handleSend = async () => {
+        setload(true);
         const formData = {
             name: nameref.current.value,
             lastname: lastnameref.current.value,
@@ -78,44 +82,43 @@ function Home() {
         };
 
         if (!formData.name || !formData.lastname || !formData.email) {
+            setload(false);
             alert("Please fill in all required fields (Name, Lastname, and Email).");
             return;
         }
 
         try {
             const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5002";
-            const response = await fetch(`${API_BASE_URL}/api/contact`, {
+            const { data } = await axios.post(`${API_BASE_URL}/api/contact`, formData);
 
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(formData),
-            });
+         setsubmission( data.message || "Thanks for Submission!");
+         setload(false);
+        //  alert(data.message || "Thanks for Submission!");
 
-            const data = await response.json();
-
-            if (response.ok) {
-                alert(data.message || "Thanks for Submission!");
-                // Optionally clear the form
-                nameref.current.value = "";
-                lastnameref.current.value = "";
-                numberref.current.value = "";
-                emailref.current.value = "";
-                messageref.current.value = "";
-                setname("");
-                setlastname("");
-                setnumber("");
-                setemail("");
-                setmessage("");
-            } else {
-                alert(data.message || "Something went wrong.");
-            }
+            // Clear the form
+            nameref.current.value = "";
+            lastnameref.current.value = "";
+            numberref.current.value = "";
+            emailref.current.value = "";
+            messageref.current.value = "";
+            setname("");
+            setlastname("");
+            setnumber("");
+            setemail("");
+            setmessage("");
         } catch (error) {
+            // setload(false);
             console.error("Error sending contact:", error);
-            alert("Failed to send contact information. Please check if the backend is running.");
+            const msg = error.response?.data?.message || "Failed to send contact information. Please check if the backend is running.";
+            alert(msg);
         }
     };
+    // if(load){
+    //     document.getElementById("load").style.display = "block";
+    // }
+    // else{
+    //     document.getElementById("load").style.display = "none";
+    // }
 
     return (
         <div className="homee">
@@ -222,6 +225,7 @@ function Home() {
                         </p>
                     </div>
                 </div>
+
                 <div className="inputs">
                     <div className="name">
                         <input type="text" placeholder="Name" ref={nameref} required />
@@ -240,6 +244,11 @@ function Home() {
                     <div className="submit"><button onClick={handleSend}>Send</button></div>
                 </div>
             </div>
+          {load && (
+  <div className=" joko" >
+  <span className="visually-hidden">Sending...</span>
+</div>
+)}
             <h3>{name}</h3>
             <h3>{lastname}</h3>
             <h3>{number}</h3>

@@ -4,7 +4,22 @@
     min-height: 100vh;
     overflow-x: hidden;
 }
-
+.joko{
+    position: fixed;
+    top: 48vh;
+    /* left: 35vw; */
+    margin-right:  0px auto;
+    margin-left:  0px auto;
+    left: 36vw;
+    width: 7rem; height: 3rem; 
+    color: white;
+    background-color: rgb(27, 33, 81) ;
+    box-shadow: 2px 2px 5px rgb(69, 143, 253);
+    text-align: center;
+    border-radius: 25px;
+    align-items: center;
+    align-content: center;
+}
 
 /* Home Section Layout & Typography */
 @media only screen and (min-width:1024px) {
