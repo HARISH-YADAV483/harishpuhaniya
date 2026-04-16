@@ -20,7 +20,7 @@ const Education = () => {
                     <div className="details">
                         <h3>Bachelor of Technology (B.Tech)</h3>
                         <p className="institution black">NIT Kurukshetra</p>
-                        <p className="branch black">Information Technology (IT) - 1st Year</p>
+                        <p className="branch black">Information Technology (IT) </p>
                         <p className="desc">
                             Currently pursuing my engineering degree at one of India's premier technical institutions,
                             focusing on buildind a strong foundation in computer science and technology.
