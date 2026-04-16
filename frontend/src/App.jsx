@@ -5,6 +5,7 @@ import "./components/Navbar.css";
 import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
 import Home from "./components/Home";
 import Contact from "./components/blog";
+import Photo from "./components/photo";
 import Education from "./components/Education";
 import Portfolio from "./components/Portfolio";
 import logi from "./assets/cross.png";
@@ -56,6 +57,7 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/education" element={<Education />} />
         <Route path="/projects" element={<Portfolio />} />
+        <Route path="/photos" element={<Photo />} />
       </Routes>
     </BrowserRouter>
   );

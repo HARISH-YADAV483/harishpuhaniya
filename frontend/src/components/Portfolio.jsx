@@ -9,7 +9,7 @@ const Portfolio = () => {
         {
             id: 1,
             title: "Campuss Managment System",
-            description: "A hostel web portal  with express and Node.js.",
+            description: "A hostel web portal  with express and Node.js.  Features : 1. Only hostel residents can logins by sending otp to their respective students ids. \n 2.After login students can fill their mess rebate online (which further go for admin verification ) 3. Student can fill online complaints (which will be transferred to warden of hostel  4.A group chat option for students of hostel so that they can chat with each other . 5. Tou will find all other necessary detail by exploring the website . **LOGIN ID for trail : 125103037@nitkkr.ac.in,  PASS :asd ",
             image: hostelImg,
             link: "https://dev-topaz.onrender.com",
             tags: ["Express.js", "Node.js", "MongoDB", "tailwind"]
@@ -17,7 +17,7 @@ const Portfolio = () => {
         {
             id: 2,
             title: "Scam-Protection App",
-            description: "Real-time scam analyzer app give ai analyses that wether a chat is scam or not.",
+            description: "ScamShield is a full-stack web platform designed to detect, analyze, and prevent online scams. It evaluates suspicious content using AI, verifies domains, and cross-checks scammer data to generate a real-time scam score with actionable insights for users.",
             image: projectImg,
             link: "https://scamshiild-2.onrender.com/",
             tags: ["React", "API", "CSS", "AI", "express.js"]

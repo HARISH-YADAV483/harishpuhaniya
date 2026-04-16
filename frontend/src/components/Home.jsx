@@ -164,7 +164,7 @@ function Home() {
 
             <div className="portfolio" id="portfolio">
                 <h1 className="peveal">PORTFOLIO</h1>
-                <h2 className="peveal">MY LATEST WORK <span><Link to="/projects" className="see-more">SEE MORE</Link></span></h2>
+                <h2 className="peveal">MY LATEST WORK <span><Link to="/projects" className="see-more">CLICK HERE</Link></span></h2>
                 <div className="projects">
                     <div className="project-item peveal">
                         <img src={roject} alt="Project 1" />
@@ -197,7 +197,7 @@ function Home() {
                     <p>
                         Capturing moments that tell a story. Photography is not just about taking pictures, it's about preserving memories and exploring the beauty of the world through a lens.
                     </p>
-                    <Link to="/contact"><button>Explore More</button></Link>
+                    <Link to="/photos"><button>Explore More</button></Link>
                 </div>
             </div>
             <div className="photography photography-reveal" id="blogs">

@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const multer = require("multer");
 const app = express();
 
 const contactController = require("./controllers/contactController");
@@ -15,6 +16,10 @@ app.get("/", (req, res) => {
 
 app.get("/api/hello", (req, res) => {
     res.json({ message: "Hello from Express " });
+});
+///post request to  be handeled .......
+app.post("/api/upload", (req, res) => {
+    res.json({ message: "image uploaded successfully" });
 });
 
 
