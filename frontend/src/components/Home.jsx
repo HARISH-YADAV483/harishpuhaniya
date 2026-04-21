@@ -211,7 +211,7 @@ function Home() {
                     <p>
                         Blogs are online platforms where individuals share ideas, knowledge, and experiences. They help build personal brands, educate readers, and showcase skills through creative writing, tutorials, and insights on various topics.
                     </p>
-                    <Link to="/contact"><button>Explore More</button></Link>
+                    <Link to="https://harishpuhaniya.blogspot.com/"><button>Explore More</button></Link>
                 </div>
             </div>
             <div className="contact" id="contact">
