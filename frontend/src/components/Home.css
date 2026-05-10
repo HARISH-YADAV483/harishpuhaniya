@@ -97,9 +97,7 @@
     .logu{
   box-shadow: 2px 2px 5px rgb(0, 0, 0) !important;
 }
-/* .imgg{
-    background-color: #1a1a1a;
-} */
+
     .profile {
         width: 100%;
         margin-top: 0px;
@@ -125,7 +123,55 @@
     .pai {
         font-size: 19px;
     }
+/* .rama {
+  box-shadow:
+    -50px -50px 0 -40px rgb(23, 41, 155),
+    50px 50px 0 -40px rgb(23, 41, 155);
+   
+width: calc(100vw - 30px);
+  margin-right: auto;
+  margin-left: auto;
+  
+} */
+ .rama {
+margin-right: auto;
+margin-left: auto;
+  position: relative;
+border-radius: 50% !important;
+  width: calc(100vw - 30px);
 
+  margin: 0 auto;
+
+  padding: 20px;
+
+  background: #fff;
+
+  border-radius: 16px;
+width: 100vw;
+  z-index: 1;
+  
+
+}
+
+.rama::before {
+
+  content: "hvjhbjbj";
+
+  position: absolute;
+
+  inset: -3px; /* thickness of frame */
+
+  border-radius: 18px;
+
+  background: linear-gradient(135deg, #17299b, #4f7cff, #17299b);
+
+  z-index: -1;
+
+}
+.imgg{
+   /* margin-top: 15px; */
+  
+}
     .circles {
         display: flex;
         flex-wrap: wrap;
@@ -160,6 +206,19 @@
 }
 
 /* Animations */
+img.scroll-anim-image {
+    opacity: 0;
+    filter: blur(10px);
+    transform: scale(0.85);
+    transition: opacity 0.8s ease, filter 0.8s ease, transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+img.scroll-anim-image.in-view {
+    opacity: 1;
+    filter: blur(0px);
+    transform: scale(1);
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -254,8 +313,53 @@
 
 .logu.loaded {
     opacity: 1;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease;
 }
+
+/* Visible placeholder text while the hero image is loading */
+.imgg.skeleton-loading::after {
+    content: "Loading...";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: 16px;
+}
+
+.imgg {
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.imgg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg);
+    transition: all 0.7s ease;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.imgg:hover::after {
+    left: 150%;
+}
+
+.imgg:hover .logu, .imgg:hover .logu.scroll-anim-image.in-view {
+    transform: scale(1.05);
+}
+
 
 /* Button & Explore */
 .button {

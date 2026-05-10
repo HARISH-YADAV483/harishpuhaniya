@@ -70,6 +70,28 @@ function Home() {
     const [email, setemail] = useState("");
     const [message, setmessage] = useState("");
     const [isImageLoaded, setIsImageLoaded] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("in-view");
+                    } else {
+                        entry.target.classList.remove("in-view");
+                    }
+                });
+            },
+            { threshold: 0.15 }
+        );
+
+        const images = document.querySelectorAll('.scroll-anim-image');
+        images.forEach((img) => observer.observe(img));
+
+        return () => {
+            images.forEach((img) => observer.unobserve(img));
+        };
+    }, []);
     
     const handleSend = async () => {
         setload(true);
@@ -122,12 +144,12 @@ function Home() {
 
     return (
         <div className="homee">
-            <div className="profile animate-fade-in-up">
-                <div className={`imgg animate-fade-in-up delay-1 ${!isImageLoaded ? 'skeleton-loading' : ''}`}>
+            <div className="profile animate-fade-in-up ">
+                <div className={`imgg animate-fade-in-up delay-1  ${!isImageLoaded ? 'skeleton-loading' : ''}` } >
                     <img 
                         src={logu} 
                         alt="ScamShield" 
-                        className={`logu ${isImageLoaded ? 'loaded' : 'loading'}`} 
+                        className={`logu rama scroll-anim-image ${isImageLoaded ? 'loaded' : 'loading'}`} 
                         onLoad={() => setIsImageLoaded(true)} 
                     />
                 </div>
@@ -167,19 +189,19 @@ function Home() {
                 <h2 className="peveal">MY LATEST WORK <span><Link to="/projects" className="see-more">CLICK HERE</Link></span></h2>
                 <div className="projects">
                     <div className="project-item peveal">
-                        <img src={roject} alt="Project 1" />
+                        <img src={roject} alt="Project 1" className="scroll-anim-image" />
                         <div className="project-info">
                             <h3>ScamShield</h3>
                         </div>
                     </div>
                     <div className="project-item peveal">
-                        <img src={oject} alt="Project 2" />
+                        <img src={oject} alt="Project 2" className="scroll-anim-image" />
                         <div className="project-info">
                             <h3>Campus-managment</h3>
                         </div>
                     </div>
                     <div className="project-item peveal">
-                        <img src={ject} alt="Project 3" />
+                        <img src={ject} alt="Project 3" className="scroll-anim-image" />
                         <div className="project-info">
                             <h3>Interative Map</h3>
                         </div>
@@ -188,7 +210,7 @@ function Home() {
             </div>
             <div className="photography photography-reveal" id="photography">
                 <div className="pgraphy image-reveal">
-                    <img src={pogu} alt="ScamShield" className="pogu" />
+                    <img src={pogu} alt="ScamShield" className="pogu scroll-anim-image" />
                 </div>
                 <div className="tgraphy text-reveal">
                     <h1>
@@ -202,7 +224,7 @@ function Home() {
             </div>
             <div className="photography photography-reveal" id="blogs">
                 <div className="pgraphy image-reveal">
-                    <img src={jogu} alt="ScamShield" className="pogu" />
+                    <img src={jogu} alt="ScamShield" className="pogu scroll-anim-image" />
                 </div>
                 <div className="tgraphy text-reveal">
                     <h1>
