@@ -335,8 +335,8 @@ img.scroll-anim-image.in-view {
 
 .imgg {
     position: relative;
-    border-radius: 50%;
-    overflow: hidden;
+    /* border-radius: 50%;
+    overflow: hidden; */
 }
 
 .imgg::after {
