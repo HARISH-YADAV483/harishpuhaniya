@@ -33,7 +33,8 @@
         gap: 60px;
     }
 .logu{
-  box-shadow: 4px 4px 8px rgb(0, 31, 92) !important;
+  border: 15px solid white !important;
+  box-shadow:  4px 2px 0px #1a1a1a;
 }
     .hello {
         font-size: 101px;
@@ -134,21 +135,24 @@ width: calc(100vw - 30px);
   
 } */
  .rama {
-margin-right: auto;
-margin-left: auto;
+margin-right: 5vw !important;
+margin-left: 5vw !important;
+margin-top: 22px !important;
   position: relative;
 border-radius: 50% !important;
-  width: calc(100vw - 30px);
+  width: calc(90vw) !important;
 
   margin: 0 auto;
 
   padding: 20px;
+ 
 
   background: #fff;
 
   border-radius: 16px;
 width: 100vw;
   z-index: 1;
+
   
 
 }
@@ -211,7 +215,7 @@ img.scroll-anim-image {
 }
 
 .logu.scroll-anim-image {
-    filter: blur(0px); /* Do not blur logu on load */
+    filter: blur(0px) !important; /* Do not blur logu on load */
 }
 
 img.scroll-anim-image.in-view {
@@ -430,7 +434,7 @@ img.scroll-anim-image.in-view {
 }
 
 .cicu {
-    background-color: #de9307;
+    background-color: rgb(255, 191, 0);
 }
 
 .cick {

@@ -1,6 +1,6 @@
-import logu from "../assets/image.png";
+import logu from "../assets/kiki.jpeg";
 import pogu from "../assets/pgaph.png";
-import jogu from "../assets/bcover.png";
+import jogu from "../assets/image copy 3.jpeg";
 
 import roject from "../assets/imagecopy.png";
 import oject from "../assets/imagcopy.png";
@@ -149,7 +149,7 @@ function Home() {
                     <img 
                         src={logu} 
                         alt="ScamShield" 
-                        className={`logu rama scroll-anim-image ${isImageLoaded ? 'loaded' : 'loading'}`} 
+                        className={`logu rama  ${isImageLoaded ? 'loaded' : 'loading'}`} 
                         onLoad={() => setIsImageLoaded(true)} 
                     />
                 </div>
@@ -240,7 +240,11 @@ function Home() {
                 <div className="details">
                     <div className="parac">
                         <h1>Contact</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, officia necessitatibus possimus nesciunt repellat mollitia. Beatae error tempora officiis, dolores illo hic corrupti non repellendus alias obcaecati at totam eaque.</p>
+                        <p>If you’d like to get in touch, feel free to contact me anytime.
+                             I’m always open to discussing new ideas, projects, collaborations,
+                              or answering your questions. Your feedback and suggestions are highly
+                               appreciated. You can reach out through email, phone, or social media,
+                             and I’ll do my best to respond as quickly as possible.</p>
                         <p>+91 8396029503
                             <br />
                             harishpuhaniya@gmail.com
