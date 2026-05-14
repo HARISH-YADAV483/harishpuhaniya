@@ -2,9 +2,9 @@ import logu from "../assets/nyu.png";
 import pogu from "../assets/pgaph.png";
 import jogu from "../assets/image copy 3.jpeg";
 import { Download, ArrowRight , PenTool, Code2,Smartphone,BrainCircuit, ExternalLink } from "lucide-react";
-import roject from "../assets/imagecopy.png";
-import oject from "../assets/imagcopy.png";
-import ject from "../assets/imagopy.png";
+import roject from "../assets/jioo.jpeg";
+import oject from "../assets/image copy 4.png";
+import ject from "../assets/image copy 5.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
@@ -157,11 +157,11 @@ function Home() {
             { threshold: 0.15 }
         );
 
-        const images = document.querySelectorAll('.scroll-anim-image');
-        images.forEach((img) => observer.observe(img));
+        const elements = document.querySelectorAll('.scroll-anim-image, .project');
+        elements.forEach((el) => observer.observe(el));
 
         return () => {
-            images.forEach((img) => observer.unobserve(img));
+            elements.forEach((el) => observer.unobserve(el));
         };
     }, []);
 
@@ -291,6 +291,61 @@ function Home() {
         <ServiceCard key={index} service={service} index={index} />
       ))}
     </div>
+
+
+     <div className="portfolo" id="portfolio">
+                <h2 className="section-heading mar">
+  <span className="circi"></span>
+ PORTFOLIO
+</h2>
+ <h2 className="titu mar">My Latest Works</h2>
+                
+                <div className="prjects">
+                    <div className="project" style={{ transitionDelay: '0ms' }}>
+                        <div className="project-image">
+                            <img src={roject} alt="Scamshield" className="roject-img"/>
+                        </div>
+                        <div className="project-details">
+                            <h3 className="project-title">Scamshield</h3>
+                            <p className="project-content">ScamShield is a cybersecurity app designed to protect users from scam calls, phishing links, and fraudulent messages. It helps identify suspicious activities, blocks spam communication, and increases online safety by providing real-time alerts and scam detection features.</p>
+                            <Link to="#" className="project-link">
+                                Learn More <ArrowRight size={15} />
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="project" style={{ transitionDelay: '200ms' }}>
+                        <div className="project-image">
+                            <img src={oject} alt="Scamshield" className="roject-img"/>
+                        </div>
+                        <div className="project-details">
+                            <h3 className="project-title">Hostel Web-Portal</h3>
+                            <p className="project-content">A modern hostel web portal that helps students and travelers discover comfortable, affordable stays with ease. Explore rooms, amenities, pricing, and availability, connect with hostel communities, and enjoy a seamless booking experience designed for convenience, safety, and comfort.</p>
+                            <Link to="#" className="project-link">
+                                Learn More <ArrowRight size={15} />
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="project" style={{ transitionDelay: '400ms' }}>
+                        <div className="project-image">
+                            <img src={ject} alt="Scamshield" className="roject-img"/>
+                        </div>
+                        <div className="project-details">
+                            <h3 className="project-title">BlogCHIT</h3>
+                            <p className="project-content">BlogChit is a modern social blogging platform where people can write blogs, share ideas, join communities, and chat with like-minded users. Discover trending topics, engage in meaningful discussions, and connect with creators through an interactive and social reading experience.</p>
+                            <Link to="#" className="project-link">
+                                Learn More <ArrowRight size={15} />
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+                
+                <div className="all-works-btn-container">
+                    <h2 className="peveal">MY ALL WORKS <span><Link to="/projects" className="see-more">CLICK HERE</Link></span></h2>
+                </div>
+
+            </div>
+
+
             <div className="educations" id="education">
                 <h1 className="peveal">Education and Learnings</h1>
                 <h2 className="peveal">My Knowledge Level in Software</h2>
@@ -307,30 +362,7 @@ function Home() {
                 </div>
             </div>
 
-            <div className="portfolio" id="portfolio">
-                <h1 className="peveal">PORTFOLIO</h1>
-                <h2 className="peveal">MY LATEST WORK <span><Link to="/projects" className="see-more">CLICK HERE</Link></span></h2>
-                <div className="projects">
-                    <div className="project-item peveal">
-                        <img src={roject} alt="Project 1" className="scroll-anim-image" />
-                        <div className="project-info">
-                            <h3>ScamShield</h3>
-                        </div>
-                    </div>
-                    <div className="project-item peveal">
-                        <img src={oject} alt="Project 2" className="scroll-anim-image" />
-                        <div className="project-info">
-                            <h3>Campus-managment</h3>
-                        </div>
-                    </div>
-                    <div className="project-item peveal">
-                        <img src={ject} alt="Project 3" className="scroll-anim-image" />
-                        <div className="project-info">
-                            <h3>Interative Map</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           
             <div className="photography photography-reveal" id="photography">
                 <div className="pgraphy image-reveal">
                     <img src={pogu} alt="ScamShield" className="pogu scroll-anim-image" />
