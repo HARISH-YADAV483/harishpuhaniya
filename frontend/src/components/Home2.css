@@ -333,7 +333,9 @@ box-shadow:  4px 2px 0px #1a1a1a;
    ============================================= */
 @media only screen and (max-width: 419px) {
     .freel-inside  { display: none !important; }
-    .action-btns-inside { display: none !important; }
+    .action-btns-inside { display: none !important;
+     }
+     
 .pao{
     padding-left:  12px;
     padding-top: 12px;
@@ -359,10 +361,11 @@ box-shadow:  4px 2px 0px #1a1a1a;
     }
 
     .action-btns-outside .action-btn {
-        width: 40vw;
+        width: 44vw;
         padding: 9px 6px;
         font-size: 0.78rem;
     }
+   
 }
 
 /* =============================================
