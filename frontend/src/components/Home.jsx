@@ -1,4 +1,4 @@
-import logu from "../assets/kiki.jpeg";
+import logu from "../assets/nyu.png";
 import pogu from "../assets/pgaph.png";
 import jogu from "../assets/image copy 3.jpeg";
 

@@ -1,5 +1,5 @@
 .homee {
-    background-color: rgba(243, 242, 242, 0.9);
+    background-color: rgba(254, 254, 254, 0.9);
     width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
@@ -27,14 +27,15 @@
         max-width: 1145px;
         margin-right: auto;
         margin-left: auto;
-        padding-top: 78px;
+        padding-top: 100px;
         display: flex;
         justify-content: space-between;
         gap: 60px;
     }
 .logu{
-  border: 15px solid white !important;
+  /* border: 15px solid white !important; */
   box-shadow:  4px 2px 0px #1a1a1a;
+  padding: 0px !important;
 }
     .hello {
         font-size: 101px;
@@ -143,12 +144,12 @@ border-radius: 50% !important;
   width: calc(96vw) !important;
 
   margin: 0 auto;
-
+/* 
   padding: 15px;
  
 
-  background: #fff;
-
+  background: #fff; */
+ box-shadow:  4px 2px 0px #1a1a1a;
   border-radius: 16px;
 width: 100vw;
   z-index: 1;
