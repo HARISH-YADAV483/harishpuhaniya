@@ -1,4 +1,33 @@
 
+.section-heading{
+  display: flex;
+  align-items: center;
+  gap: clamp(4px, 1vw, 8px);
+color: #f4b400;
+  font-size: clamp(1rem, 2vw, 2.9rem);
+  font-weight: 700;
+  margin-top: 44px;
+}
+
+
+.circi{
+  width: clamp(25px, 1vw, 28px);
+  height: clamp(25px, 1vw, 28px);
+
+  border-radius: 50%;
+  background: #f4b400; /* gold color */
+
+  flex-shrink: 0;
+}
+.titu{
+    font-size: clamp(1rem, 2vw, 2.9rem);
+  font-weight: 700;
+}
+.mar{
+    margin-left: 2vw;
+    
+}
+
 .imgg.skeleton-loading::after {
     content: "Loading...";
     position: absolute;
@@ -17,6 +46,185 @@
 .imgg {
     position: relative;
    
+}
+/* =============================================
+   SERVICE CARDS — PROFESSIONAL DESIGN
+   ============================================= */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 24px 2vw;
+    width: 96vw;
+}
+
+@media only screen and (max-width: 749px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        padding: 16px 3vw;
+        width: 94vw;
+    }
+}
+
+/* — Card base — */
+.service-card {
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 16px;
+    padding: 32px 28px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                border-color 0.3s ease;
+    /* scroll animation start state */
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+}
+
+.service-card--visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.4s ease,
+                border-color 0.3s ease;
+}
+
+/* — Decorative top accent line — */
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #d4a017, #f4c430, #d4a017);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+/* — Hover glow — */
+.service-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 16px 48px rgba(212, 160, 23, 0.12),
+                0 4px 16px rgba(0, 0, 0, 0.06);
+    border-color: rgba(212, 160, 23, 0.35);
+}
+
+/* — Icon circle with skinish yellow bg — */
+.service-card__icon-wrap {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #fdf3d2, #f8e8a0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9a7b10;
+    flex-shrink: 0;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    box-shadow: 0 2px 8px rgba(244, 196, 48, 0.2);
+}
+
+.service-card:hover .service-card__icon-wrap {
+    transform: scale(1.1) rotate(-3deg);
+    box-shadow: 0 6px 20px rgba(244, 196, 48, 0.35);
+}
+
+/* — Title — */
+.service-card__title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+/* — Description — */
+.service-card__desc {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+    flex: 1;
+}
+
+/* — Learn More link (gold) — */
+.service-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #b8860b;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.25s ease, gap 0.3s ease;
+    margin-top: auto;
+    padding-top: 6px;
+}
+
+.service-card__link:hover {
+    color: #d4a017;
+    gap: 10px;
+}
+
+.service-card__link svg {
+    transition: transform 0.3s ease;
+}
+
+.service-card__link:hover svg {
+    transform: translateX(3px);
+}
+
+/* =============================================
+   SERVICE CARDS — RESPONSIVE
+   ============================================= */
+@media only screen and (max-width: 600px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 16px 4vw;
+    }
+
+    .service-card {
+        padding: 24px 20px 22px;
+    }
+
+    .service-card__icon-wrap {
+        width: 52px;
+        height: 52px;
+        border-radius: 12px;
+    }
+
+    .service-card__title {
+        font-size: 1.08rem;
+    }
+
+    .service-card__desc {
+        font-size: 0.85rem;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px 3vw;
+    }
+
+    .service-card {
+        padding: 28px 22px 24px;
+    }
 }
 
 .imgg::after {
@@ -38,6 +246,12 @@
 }
 
 @media only screen and (min-width:750px) {
+    .service{
+        width: 23vw;
+        margin-right: 1vw;
+        margin-left: 1vw;
+    }
+    /* grid handles width */
 
 .blink {
 
@@ -337,6 +551,12 @@ box-shadow:  4px 2px 0px #1a1a1a;
     .freel-inside  { display: none !important; }
     .action-btns-inside { display: none !important;
      }
+     .service{
+        width: 46vw;
+        margin-right: 2vw;
+        margin-left: 2vw;
+     }
+
      
 .pao{
     padding-left:  12px;
@@ -398,6 +618,11 @@ box-shadow:  4px 2px 0px #1a1a1a;
     .action-btns-outside .action-btn {
         width: 38vw;
     }
+     .service{
+        width: 44vw;
+        margin-right: 3vw;
+        margin-left: 3vw;
+     }
 }
 
 /* =============================================

@@ -1,7 +1,7 @@
 import logu from "../assets/nyu.png";
 import pogu from "../assets/pgaph.png";
 import jogu from "../assets/image copy 3.jpeg";
-import { Download, ArrowRight } from "lucide-react";
+import { Download, ArrowRight , PenTool, Code2,Smartphone,BrainCircuit, ExternalLink } from "lucide-react";
 import roject from "../assets/imagecopy.png";
 import oject from "../assets/imagcopy.png";
 import ject from "../assets/imagopy.png";
@@ -37,6 +37,7 @@ const SkillBar = ({ name, targetWidth, count }) => {
         return () => observer.disconnect();
     }, []);
 
+
     return (
         <div className={`maal ${isVisible ? "visible" : ""}`} ref={barRef}>
             <div className="name">{name}</div>
@@ -47,7 +48,67 @@ const SkillBar = ({ name, targetWidth, count }) => {
         </div>
     );
 };
+const services = [
+    {
+      icon: <PenTool size={28} />,
+      title: "UI/UX Design",
+      desc: "Designing intuitive and engaging user experiences with pixel-perfect attention to detail.",
+      link: "/services#uiux",
+    },
+    {
+      icon: <Code2 size={28} />,
+      title: "Web Development",
+      desc: "Building responsive, performant, and scalable web applications with modern technologies.",
+      link: "/services#webdev",
+    },
+    {
+      icon: <Smartphone size={28} />,
+      title: "Responsive Design",
+      desc: "Creating fluid layouts that deliver a seamless experience on every device and screen size.",
+      link: "/services#responsive",
+    },
+    {
+      icon: <BrainCircuit size={28} />,
+      title: "AI Model Development",
+      desc: "Developing intelligent AI solutions and custom ML models for real-world applications.",
+      link: "/services#ai",
+    },
+  ];
 
+const ServiceCard = ({ service, index }) => {
+    const [isVisible, setIsVisible] = useState(false);
+    const cardRef = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                }
+            },
+            { threshold: 0.15 }
+        );
+        if (cardRef.current) observer.observe(cardRef.current);
+        return () => observer.disconnect();
+    }, []);
+
+    return (
+        <div
+            ref={cardRef}
+            className={`service-card ${isVisible ? 'service-card--visible' : ''}`}
+            style={{ transitionDelay: `${index * 120}ms` }}
+        >
+            <div className="service-card__icon-wrap">
+                {service.icon}
+            </div>
+            <h3 className="service-card__title">{service.title}</h3>
+            <p className="service-card__desc">{service.desc}</p>
+            <Link to={service.link} className="service-card__link">
+                Learn More <ArrowRight size={15} />
+            </Link>
+        </div>
+    );
+};
 function Home() {
     const skills = [
         { name: "CLANG", targetWidth: "70%", count: "70%" },
@@ -212,7 +273,16 @@ function Home() {
               <div className="action-btn">Download CV <Download size={18} /></div>
               <div className="action-btn">See My Work <ArrowRight size={18} /></div>
             </div>
-
+           <h2 className="section-heading mar">
+  <span className="circi"></span>
+  What I Do
+</h2>
+ <h2 className="titu mar">Services I Provide</h2>
+ <div className="services-grid">
+      {services.map((service, index) => (
+        <ServiceCard key={index} service={service} index={index} />
+      ))}
+    </div>
             <div className="educations" id="education">
                 <h1 className="peveal">Education and Learnings</h1>
                 <h2 className="peveal">My Knowledge Level in Software</h2>
