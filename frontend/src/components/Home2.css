@@ -1,4 +1,13 @@
-
+.service-card{
+    padding: 8px !important;
+    box-sizing: border-box !important;
+    gap: 8px !important;
+}
+.services-grid{
+    padding: 0px !important;
+    margin-left: 2vw;
+    margin-top: 23px !important;
+}
 .section-heading{
   display: flex;
   align-items: center;
@@ -65,7 +74,33 @@ color: #f4b400;
         padding: 16px 3vw;
         width: 94vw;
     }
+
+    /* Make cards + typography scale down on small screens */
+    .service-card {
+      
+        border-radius: 14px;
+
+    }
+
+    .service-card__icon-wrap {
+        width: 52px;
+        height: 52px;
+    }
+
+    .service-card__title {
+        font-size: 1.08rem;
+    }
+
+    .service-card__desc {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .service-card__link {
+        font-size: 0.84rem;
+    }
 }
+
 
 /* — Card base — */
 .service-card {
@@ -191,7 +226,7 @@ color: #f4b400;
    ============================================= */
 @media only screen and (max-width: 600px) {
     .services-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 18px;
         padding: 16px 4vw;
     }

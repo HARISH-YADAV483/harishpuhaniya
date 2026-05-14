@@ -1,6 +1,6 @@
-- [x] Inspect Home.jsx and related CSS for `.rama`, skeleton/loading behavior.
-- [x] Add a visible text placeholder in the image area while the hero image is loading.
-- [x] Ensure no other code is changed beyond the placeholder + required CSS.
-- [x] Run quick build/lint check for frontend (if available).
+# TODO
 
+## Service card scroll animation
+- [x] Update `ServiceCard` IntersectionObserver in `frontend/src/components/Home.jsx` to toggle visibility on enter/exit so animation triggers whenever cards come into view.
+- [x] Verify in browser by scrolling down and back up (cards should animate on each re-entry).
 

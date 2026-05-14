@@ -82,12 +82,20 @@ const ServiceCard = ({ service, index }) => {
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
+                // Trigger animation every time the card enters the viewport while scrolling down.
                 if (entry.isIntersecting) {
                     setIsVisible(true);
+                } else {
+                    setIsVisible(false);
                 }
             },
-            { threshold: 0.15 }
+            {
+                threshold: 0.15,
+                // Start slightly before the card is fully in view.
+                rootMargin: "0px 0px -10% 0px",
+            }
         );
+
         if (cardRef.current) observer.observe(cardRef.current);
         return () => observer.disconnect();
     }, []);
