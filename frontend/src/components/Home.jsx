@@ -1,7 +1,7 @@
 import logu from "../assets/nyu.png";
 import pogu from "../assets/pgaph.png";
 import jogu from "../assets/image copy 3.jpeg";
-
+import { Download, ArrowRight } from "lucide-react";
 import roject from "../assets/imagecopy.png";
 import oject from "../assets/imagcopy.png";
 import ject from "../assets/imagopy.png";
@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import "./Home.css";
+import "./Home2.css";
 import "./graphy.css";
 import "./Education.css";
 import "./Portfolio.css";
@@ -56,6 +57,8 @@ function Home() {
         { name: "NODE.JS", targetWidth: "75%", count: "75%" },
         { name: "HTML CSS", targetWidth: "95%", count: "95%" },
     ];
+    const waveRef = useRef(null);
+    const [isWaving, setIsWaving] = useState(false);
     const nameref = useRef(null);
     const lastnameref = useRef(null);
     const numberref = useRef(null);
@@ -91,6 +94,30 @@ function Home() {
         return () => {
             images.forEach((img) => observer.unobserve(img));
         };
+    }, []);
+
+    useEffect(() => {
+        const timer = setTimeout(() => setIsWaving(true), 1000);
+        return () => clearTimeout(timer);
+    }, []);
+
+    useEffect(() => {
+        const waveObserver = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsWaving(true);
+                } else {
+                    setIsWaving(false);
+                }
+            },
+            { threshold: 0.5 }
+        );
+
+        if (waveRef.current) {
+            waveObserver.observe(waveRef.current);
+        }
+
+        return () => waveObserver.disconnect();
     }, []);
     
     const handleSend = async () => {
@@ -143,9 +170,26 @@ function Home() {
     // }
 
     return (
-        <div className="homee">
-            <div className="profile animate-fade-in-up ">
-                <div className={`imgg animate-fade-in-up delay-1  ${!isImageLoaded ? 'skeleton-loading' : ''}` } >
+        <div className="homee ">
+            <div className=" profilew animate-fade-in-up ">
+               
+                <div className="para">
+                    <h1 className="hello animate-fade-in-up delay-2" style={{color:"rgb(241, 186, 2)" , fontWeight:"bold" , fontSize:"2.6rem"}}>Hello, <span ref={waveRef} className={`wave-emoji${isWaving ? ' waving' : ''}`}>👋</span></h1>
+                    <h3 className="bit animate-fade-in-up delay-2">I'm Harish Puhaniya</h3>
+                    <p className="pai animate-fade-in-up delay-3">
+                       I’m Harish Puhaniya, a UI/UX Designer and Web Developer currently pursuing a B.Tech in Information Technology at National Institute of Technology Kurukshetra. Passionate about creating user-centered digital experiences, I enjoy combining clean design with functional development to build modern and impactful web solutions.</p>
+                    {/* freel: visible for >=450px inside para */}
+                    <div className="freel freel-inside">
+                      <h3 style={{display:"flex", justifyContent:"center", gap:"12px" , alignItems:"center"}}><div className="blink"></div>Freelancer</h3>
+                      <p>Book now </p>
+                    </div>
+                    {/* action buttons: visible only on >=750px inside para */}
+                    <div className="action-btns action-btns-inside">
+                      <div className="action-btn">Download CV <Download size={18} /></div>
+                      <div className="action-btn">See My Work <ArrowRight size={18} /></div>
+                    </div>
+                </div>
+                 <div className={`imgg animate-fade-in-up delay-1  ${!isImageLoaded ? 'skeleton-loading' : ''}` } >
                     <img 
                         src={logu} 
                         alt="ScamShield" 
@@ -153,19 +197,20 @@ function Home() {
                         onLoad={() => setIsImageLoaded(true)} 
                     />
                 </div>
-                <div className="para">
-                    <h1 className="hello animate-fade-in-up delay-2">Hello</h1>
-                    <h3 className="bit animate-fade-in-up delay-2">A Bit About Me</h3>
-                    <p className="pai animate-fade-in-up delay-3">
-                        I'm Harish Puhaniya UI/UX designer and Web developer. Currently pursuing my B.tech degree from NIT Kurukshetra with Information Technology branch.
+            </div>
+<p className="pao animate-fade-in-up delay-3">
+                       I’m Harish Puhaniya, a UI/UX Designer and Web Developer currently pursuing a B.Tech in Information Technology at National Institute of Technology Kurukshetra. Passionate about creating user-centered digital experiences, I enjoy combining clean design with functional development to build modern and impactful web solutions.
                     </p>
-                    <div className="circles animate-fade-in-up delay-4 reveal">
-                        <Link to="#education" className="ji"><div className="cici cicu">Education</div></Link>
-                        <Link to="#portfolio" className="ji"><div className="cici cick">Project</div></Link>
-                        <Link to="#photography" className="ji"><div className="cici cicb">Photos</div></Link>
-                        <Link to="#blogs" className="ji"><div className="cici cicn">Blog</div></Link>
-                    </div>
-                </div>
+            {/* freel for <450px: outside profilew, below it */}
+            <div className="freel freel-outside">
+              <h3 style={{display:"flex", justifyContent:"center", gap:"12px" , alignItems:"center"}}><div className="blink"></div>Freelancer</h3>
+              <p>Book now </p>
+            </div>
+
+            {/* action buttons for <=749px: below profilew */}
+            <div className="action-btns action-btns-outside">
+              <div className="action-btn">Download CV <Download size={18} /></div>
+              <div className="action-btn">See My Work <ArrowRight size={18} /></div>
             </div>
 
             <div className="educations" id="education">

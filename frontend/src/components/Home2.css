@@ -1,0 +1,413 @@
+
+.imgg.skeleton-loading::after {
+    content: "Loading...";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: 16px;
+}
+
+.imgg {
+    position: relative;
+   
+}
+
+.imgg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg);
+    transition: all 0.7s ease;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.imgg:hover::after {
+    left: 150%;
+}
+
+@media only screen and (min-width:750px) {
+
+.blink {
+
+  width: clamp(10px, 1.5vw, 16px);
+
+  height: clamp(10px, 1.5vw, 16px);
+
+  border-radius: 50%;
+
+  background: #00ff66;
+
+  animation: blink 1s infinite;
+
+  box-shadow: 0 0 10px #00ff66;
+
+}
+
+@keyframes blink {
+
+  0% {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+  }
+
+  50% {
+
+    opacity: 0.3;
+
+    transform: scale(0.8);
+
+  }
+
+  100% {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+  }
+
+}
+
+    .pao{
+        display: none !important;
+    }
+    .hello{
+        font-size: 6rem !important;
+    }
+    .bit{
+        font-size: 4rem !important;
+        margin-bottom: 23px;
+    }
+    .pai{
+margin-bottom: 43px;
+    }
+    .freel{
+        text-align: center;
+        width: 111px;
+        background-color: #cacaca;
+        margin-top: 12px;
+        border-radius: 23px;
+        box-shadow: 2px 2px 2px goldenrod;
+        margin-bottom: 23px;
+    }
+    .profilew{
+display: flex;
+justify-content: space-between;
+padding: 0 12px;
+margin-top: 43px;
+gap: calc(5vw - 12px);
+}
+.para{
+    width: 53vw;
+    margin-left: 1vw;
+
+}
+.imgg{
+    width: 40vw;
+    margin-right: 1vw;
+}
+.action-btn{
+    width: 17vw;
+}
+.logu{
+  /* border: 15px solid white !important; */
+  box-shadow:  4px 2px 0px #1a1a1a;
+  padding: 0px !important;
+}
+ .logu {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+    }
+.logu.loading {
+    opacity: 0;
+}
+
+.logu.loaded {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease;
+}
+
+}
+@media only screen and (max-width:750px) {
+    .profilew{
+display: flex;
+justify-content: space-between;
+padding: 0 12px;
+margin-top: 23px;
+position: relative;
+
+}
+.para{
+    width: 40vw;
+    /* margin-left: 1vw; */
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 13px;
+    align-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+
+}
+.freel{
+    background-color: rgb(243, 246, 249);
+    color: rgb(26, 26, 26);
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px gold;
+    margin-top: 12px;
+    text-align: center;
+    padding: 6px 14px;
+    width: 35vw;
+}
+.blink {
+
+  width: clamp(10px, 1.5vw, 16px);
+
+  height: clamp(10px, 1.5vw, 16px);
+
+  border-radius: 50%;
+
+  background: #00ff66;
+
+  animation: blink 1s infinite;
+
+  box-shadow: 0 0 10px #00ff66;
+
+}
+
+@keyframes blink {
+
+  0% {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+  }
+
+  50% {
+
+    opacity: 0.3;
+
+    transform: scale(0.8);
+
+  }
+
+  100% {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+  }
+
+}
+.imgg{
+    width: 60vw;
+    margin-right: 1vw;
+    height: max-content;
+}
+.hello{
+    font-size: clamp(1.5rem, 5vw, 5rem);
+}
+.bit{
+    font-size: clamp(1.5rem, 5vw, 3rem);
+}
+.pai{
+    display: none;
+
+}
+
+  /* .logu{
+  box-shadow: 2px 2px 5px rgb(0, 0, 0) !important;
+} */
+ .logu {
+        width: 100%;
+        height: auto;
+    }
+ .rama {
+margin-right: 2vw !important;
+margin-left: 2vw !important;
+margin-top: 22px !important;
+  position: relative;
+border-radius: 50% !important;
+box-shadow:  4px 2px 0px #1a1a1a;
+
+  margin: 0 auto;
+/* 
+  padding: 15px;
+ 
+
+  background: #fff; */
+
+  border-radius: 16px;
+
+  z-index: 1;
+
+  
+
+}
+
+.rama::before {
+
+  content: "hvjhbjbj";
+
+  position: absolute;
+
+  inset: -3px; 
+
+  border-radius: 18px;
+
+  background: linear-gradient(135deg, #17299b, #4f7cff, #17299b);
+
+  z-index: -1;
+
+}
+
+}
+.imgg:hover .logu, .imgg:hover .logu.scroll-anim-image.in-view {
+    transform: scale(1.05);
+}
+
+/* =============================================
+   ACTION BUTTONS BASE STYLES
+   ============================================= */
+.action-btns {
+    display: flex;
+    /* flex-direction: column; */
+    gap: 12px;
+ 
+    margin-top: 14px;
+    flex-wrap: wrap;
+
+
+}
+
+.action-btn {
+    background: rgb(241, 186, 2);
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 400;
+    font-size: 0.88rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    user-select: none;
+    letter-spacing: 0.03em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-right: 12px;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(79, 124, 255, 0.45);
+}
+
+/* =============================================
+   SCREEN < 450px
+   - freel-outside: below profilew, width 72vw
+   - action-btns-outside: single row, each ~40vw
+   - freel-inside & action-btns-inside: hidden
+   ============================================= */
+@media only screen and (max-width: 419px) {
+    .freel-inside  { display: none !important; }
+    .action-btns-inside { display: none !important; }
+.pao{
+    padding-left:  12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    
+}
+    .freel-outside {
+        display: none;
+        margin-left: 12px !important;
+        width: 72vw;
+        margin: 12px auto 6px;
+    }
+/* .action-btn{
+    margin-left: 12px !important;
+} */
+    .action-btns-outside {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin: 6px auto 14px;
+        width: 100%;
+        margin-left: 12px !important;
+    }
+
+    .action-btns-outside .action-btn {
+        width: 40vw;
+        padding: 9px 6px;
+        font-size: 0.78rem;
+    }
+}
+
+/* =============================================
+   SCREEN 450px – 749px
+   - freel-inside: stays in para as-is
+   - action-btns-outside: single row below profilew
+   - freel-outside & action-btns-inside: hidden
+   ============================================= */
+@media only screen and (min-width: 420px) and (max-width: 749px) {
+    .freel-inside  { display: block; }
+    .action-btns-inside { display: none !important; }
+.pao{
+    padding-left:  12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    
+}
+    .freel-outside { display: none !important; }
+
+    .action-btns-outside {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        margin: 12px auto 16px;
+        width: 100%;
+    }
+
+    .action-btns-outside .action-btn {
+        width: 38vw;
+    }
+}
+
+/* =============================================
+   SCREEN >= 750px
+   - freel-inside & action-btns-inside: inside para
+   - freel-outside & action-btns-outside: hidden
+   ============================================= */
+@media only screen and (min-width: 750px) {
+    .freel-inside {
+        display: block;
+        min-width: 36vw;
+        max-width: 60vw;
+    }
+    .action-btns-inside { display: flex; }
+
+    .freel-outside   { display: none !important; }
+    .action-btns-outside { display: none !important; }
+}

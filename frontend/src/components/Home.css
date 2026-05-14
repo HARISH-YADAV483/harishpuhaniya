@@ -32,14 +32,7 @@
         justify-content: space-between;
         gap: 60px;
     }
-.logu{
-  /* border: 15px solid white !important; */
-  box-shadow:  4px 2px 0px #1a1a1a;
-  padding: 0px !important;
-}
-    .hello {
-        font-size: 101px;
-    }
+
 
     .bit {
         font-size: 25px;
@@ -47,6 +40,7 @@
     }
 
     .pai {
+        
         font-size: 19px;
     }
 
@@ -54,11 +48,7 @@
         display: none;
     }
 
-    .logu {
-        width: 544px;
-        height: auto;
-        border-radius: 50%;
-    }
+   
 
     .circles {
         display: flex;
@@ -96,27 +86,17 @@
 }
 
 @media only screen and (max-width:1024px) {
-    .logu{
-  box-shadow: 2px 2px 5px rgb(0, 0, 0) !important;
-}
+  
 
     .profile {
         width: 100%;
         margin-top: 0px;
     }
 
-    .para {
-        margin-left: 5px;
-    }
+   
 
-    .logu {
-        width: 100vw;
-        height: auto;
-    }
+   
 
-    .hello {
-        font-size: 71px;
-    }
 
     .bit {
         font-size: 25px;
@@ -125,54 +105,8 @@
     .pai {
         font-size: 19px;
     }
-/* .rama {
-  box-shadow:
-    -50px -50px 0 -40px rgb(23, 41, 155),
-    50px 50px 0 -40px rgb(23, 41, 155);
-   
-width: calc(100vw - 30px);
-  margin-right: auto;
-  margin-left: auto;
-  
-} */
- .rama {
-margin-right: 2vw !important;
-margin-left: 2vw !important;
-margin-top: 22px !important;
-  position: relative;
-border-radius: 50% !important;
-  width: calc(96vw) !important;
 
-  margin: 0 auto;
-/* 
-  padding: 15px;
- 
 
-  background: #fff; */
- box-shadow:  4px 2px 0px #1a1a1a;
-  border-radius: 16px;
-width: 100vw;
-  z-index: 1;
-
-  
-
-}
-
-.rama::before {
-
-  content: "hvjhbjbj";
-
-  position: absolute;
-
-  inset: -3px; 
-
-  border-radius: 18px;
-
-  background: linear-gradient(135deg, #17299b, #4f7cff, #17299b);
-
-  z-index: -1;
-
-}
 
     .circles {
         display: flex;
@@ -207,6 +141,27 @@ width: 100vw;
 
 }
 
+/* Wave Emoji Animation */
+@keyframes wave-hand {
+    0%   { transform: rotate(0deg); }
+    10%  { transform: rotate(14deg); }
+    20%  { transform: rotate(-8deg); }
+    30%  { transform: rotate(14deg); }
+    40%  { transform: rotate(-4deg); }
+    50%  { transform: rotate(10deg); }
+    60%  { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.wave-emoji {
+    display: inline-block;
+    transform-origin: 70% 70%;
+}
+
+.wave-emoji.waving {
+    animation: wave-hand 2s ease-in-out;
+}
+
 /* Animations */
 img.scroll-anim-image {
     opacity: 0;
@@ -215,15 +170,9 @@ img.scroll-anim-image {
     transition: opacity 0.8s ease, filter 0.8s ease, transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.logu.scroll-anim-image {
-    filter: blur(0px) !important; /* Do not blur logu on load */
-}
 
-img.scroll-anim-image.in-view {
-    opacity: 1;
-    filter: blur(0px);
-    transform: scale(1);
-}
+
+
 
 @keyframes fadeInUp {
     from {
@@ -313,58 +262,13 @@ img.scroll-anim-image.in-view {
     }
 }
 
-.logu.loading {
-    opacity: 0;
-}
 
-.logu.loaded {
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease;
-}
+
+
 
 /* Visible placeholder text while the hero image is loading */
-.imgg.skeleton-loading::after {
-    content: "Loading...";
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-    font-size: 18px;
-    font-weight: 700;
-    color: #1a1a1a;
-    background: rgba(255, 255, 255, 0.65);
-    border-radius: 16px;
-}
 
-.imgg {
-    position: relative;
-    /* border-radius: 50%;
-    overflow: hidden; */
-}
 
-.imgg::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
-    transform: skewX(-25deg);
-    transition: all 0.7s ease;
-    z-index: 10;
-    pointer-events: none;
-}
-
-.imgg:hover::after {
-    left: 150%;
-}
-
-.imgg:hover .logu, .imgg:hover .logu.scroll-anim-image.in-view {
-    transform: scale(1.05);
-}
 
 
 /* Button & Explore */
