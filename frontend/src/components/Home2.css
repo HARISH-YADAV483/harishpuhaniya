@@ -1,3 +1,12 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.pai{
+    color:rgb(73, 73, 73) !important;
+}
+.pao{
+    color:rgb(73, 73, 73) !important;
+}
 .service-card{
     padding: 8px !important;
     box-sizing: border-box !important;
