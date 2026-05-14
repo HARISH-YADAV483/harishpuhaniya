@@ -111,6 +111,8 @@ justify-content: space-between;
 padding: 0 12px;
 margin-top: 43px;
 gap: calc(5vw - 12px);
+width: 95vw;
+margin-left: 5vw;
 }
 .para{
     width: 53vw;
