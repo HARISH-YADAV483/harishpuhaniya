@@ -1,10 +1,11 @@
 import logu from "../assets/nyu.png";
 import pogu from "../assets/pgaph.png";
-import jogu from "../assets/image copy 3.jpeg";
+import jogu from "../assets/blog.jpeg";
 import { Download, ArrowRight , PenTool, Code2,Smartphone,BrainCircuit, ExternalLink,GraduationCap } from "lucide-react";
 import roject from "../assets/jioo.jpeg";
 import oject from "../assets/image copy 4.png";
 import ject from "../assets/image copy 5.png";
+import cv from "../assets/harishpuhaniyacv.pdf";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
@@ -111,7 +112,7 @@ const ServiceCard = ({ service, index }) => {
             </div>
             <h3 className="service-card__title">{service.title}</h3>
             <p className="service-card__desc">{service.desc}</p>
-            <Link to={service.link} className="service-card__link">
+            <Link to="#portfolio" onClick={(e) => { e.preventDefault(); document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' }); }} className="service-card__link">
                 Learn More <ArrowRight size={15} />
             </Link>
         </div>
@@ -248,14 +249,14 @@ function Home() {
                     <p className="pai animate-fade-in-up delay-3">
                        I’m Harish Puhaniya, a UI/UX Designer and Web Developer currently pursuing a B.Tech in Information Technology at National Institute of Technology Kurukshetra. Passionate about creating user-centered digital experiences, I enjoy combining clean design with functional development to build modern and impactful web solutions.</p>
                     {/* freel: visible for >=450px inside para */}
-                    <div className="freel freel-inside">
+                    <div className="freel freel-inside" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
                       <h3 style={{display:"flex", justifyContent:"center", gap:"12px" , alignItems:"center"}}><div className="blink"></div>Freelancer</h3>
                       <p>Book now </p>
                     </div>
                     {/* action buttons: visible only on >=750px inside para */}
                     <div className="action-btns action-btns-inside">
-                      <div className="action-btn">Download CV <Download size={18} /></div>
-                      <div className="action-btn">See My Work <ArrowRight size={18} /></div>
+                      <a href={cv} download="harishpuhaniyacv.pdf" className="action-btn" style={{ textDecoration: 'none', color: '#1a1a1a' }}>Download CV <Download size={18} /></a>
+                      <div className="action-btn" onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}>See My Work <ArrowRight size={18} /></div>
                     </div>
                 </div>
                  <div className={`imgg animate-fade-in-up delay-1  ${!isImageLoaded ? 'skeleton-loading' : ''}` } >
@@ -271,15 +272,15 @@ function Home() {
                        I’m Harish Puhaniya, a UI/UX Designer and Web Developer currently pursuing a B.Tech in Information Technology at National Institute of Technology Kurukshetra. Passionate about creating user-centered digital experiences, I enjoy combining clean design with functional development to build modern and impactful web solutions.
                     </p>
             {/* freel for <450px: outside profilew, below it */}
-            <div className="freel freel-outside">
+            <div className="freel freel-outside" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
               <h3 style={{display:"flex", justifyContent:"center", gap:"12px" , alignItems:"center"}}><div className="blink"></div>Freelancer</h3>
               <p>Book now </p>
             </div>
 
             {/* action buttons for <=749px: below profilew */}
             <div className="action-btns action-btns-outside">
-              <div className="action-btn">Download CV <Download size={18} /></div>
-              <div className="action-btn">See My Work <ArrowRight size={18} /></div>
+              <a href={cv} download="harishpuhaniyacv.pdf" className="action-btn" style={{ textDecoration: 'none', color: '#1a1a1a' }}>Download CV <Download size={18} /></a>
+              <div className="action-btn" onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}>See My Work <ArrowRight size={18} /></div>
             </div>
            <h2 className="section-heading mar">
   <span className="circi"></span>
@@ -308,7 +309,7 @@ function Home() {
                         <div className="project-details">
                             <h3 className="project-title">Scamshield</h3>
                             <p className="project-content">ScamShield is a cybersecurity app designed to protect users from scam calls, phishing links, and fraudulent messages. It helps identify suspicious activities, blocks spam communication, and increases online safety by providing real-time alerts and scam detection features.</p>
-                            <Link to="#" className="project-link">
+                            <Link to="/projects" className="project-link">
                                 Learn More <ArrowRight size={15} />
                             </Link>
                         </div>
@@ -320,7 +321,7 @@ function Home() {
                         <div className="project-details">
                             <h3 className="project-title">Hostel Web-Portal</h3>
                             <p className="project-content">A modern hostel web portal that helps students and travelers discover comfortable, affordable stays with ease. Explore rooms, amenities, pricing, and availability, connect with hostel communities, and enjoy a seamless booking experience designed for convenience, safety, and comfort.</p>
-                            <Link to="#" className="project-link">
+                            <Link to="/projects" className="project-link">
                                 Learn More <ArrowRight size={15} />
                             </Link>
                         </div>
@@ -332,7 +333,7 @@ function Home() {
                         <div className="project-details">
                             <h3 className="project-title">BlogCHIT</h3>
                             <p className="project-content">BlogChit is a modern social blogging platform where people can write blogs, share ideas, join communities, and chat with like-minded users. Discover trending topics, engage in meaningful discussions, and connect with creators through an interactive and social reading experience.</p>
-                            <Link to="#" className="project-link">
+                            <Link to="/projects" className="project-link">
                                 Learn More <ArrowRight size={15} />
                             </Link>
                         </div>
@@ -394,7 +395,11 @@ function Home() {
                     </Link>
                 </div>
 
-           
+           <h2 className="section-heading mar">
+  <span className="circi"></span>
+HOBBIES
+</h2>
+ <h2 className="titu mar">Hobbies and Personal Interset</h2>
             <div className="photography photography-reveal" id="photography">
                 <div className="pgraphy image-reveal">
                     <img src={pogu} alt="ScamShield" className="pogu scroll-anim-image" />
@@ -406,7 +411,7 @@ function Home() {
                     <p>
                         Capturing moments that tell a story. Photography is not just about taking pictures, it's about preserving memories and exploring the beauty of the world through a lens.
                     </p>
-                    <Link to="/photos"><button>Explore More</button></Link>
+                    <Link to="/photos" className="photui">See photos <ArrowRight size={18} /></Link>
                 </div>
             </div>
             <div className="photography photography-reveal" id="blogs">
@@ -420,7 +425,7 @@ function Home() {
                     <p>
                         Blogs are online platforms where individuals share ideas, knowledge, and experiences. They help build personal brands, educate readers, and showcase skills through creative writing, tutorials, and insights on various topics.
                     </p>
-                    <Link to="https://harishpuhaniya.blogspot.com/"><button>Explore More</button></Link>
+                    <Link to="https://harishpuhaniya.blogspot.com/" className="photui">Read Blogs <ArrowRight size={18} /></Link>
                 </div>
             </div>
             <div className="contact" id="contact">
