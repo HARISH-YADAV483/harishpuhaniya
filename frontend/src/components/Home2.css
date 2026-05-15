@@ -408,6 +408,114 @@ margin-left: 5vw;
     opacity: 1;
     transition: opacity 0.5s ease-in-out, transform 0.5s ease;
 }
+.educations{
+    display: flex !important;
+    width: 94vw;
+    margin-right: 3vw;
+    margin-left: 3vw;
+    box-sizing: border-box;
+
+}
+.ubjects{
+width: 44vw;
+}
+.detal{
+    width: 45vw;
+    margin-left: 5vw;
+}
+.institute-heading{
+    display: flex;
+   margin-top: 18px;
+    align-items:center;
+    width: 96vw;
+    margin-right: 2vw;
+    margin-left: 2vw;
+    
+    gap: 23px;
+      margin-bottom: 23px !important;
+}
+
+.educations{
+    margin-top: 18px !important;
+    
+}
+.maal{
+    margin-top: 3px !important;
+}
+.loading{
+    background-color: goldenrod !important;
+}
+
+.institute-heading h2{
+
+  font-size: 1.6rem !important;
+
+  font-weight: 700;
+
+  line-height: 1.3;
+
+  margin: 0;
+
+
+ 
+}
+ .jhiku{
+    margin-top: 43px !important;
+    
+  }
+.pa{
+    box-sizing: border-box;
+    padding-left: 12px ;
+    padding-right: 10px;
+    color: rgb(71, 71, 71);
+    padding-top: 12px;
+    font-size: 1.4rem;
+}
+.logo-box{
+
+  width: clamp(42px, 5vw, 70px);
+
+  height: clamp(42px, 5vw, 70px);
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+
+    135deg,
+
+    #f4b400,
+
+    #ffd95a
+
+  );
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  box-shadow: 0 4px 15px rgba(244,180,0,0.25);
+
+}
+.logo-icon{
+
+  width: 55%;
+
+  height: 55%;
+
+  color: #111;
+
+}
+.loading{
+    height: 10px !important;
+    
+}
+.chiku{
+    display: none !important;
+}
 
 }
 @media only screen and (max-width:750px) {
@@ -444,6 +552,9 @@ position: relative;
     width: 35vw;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+}
+.jhiku{
+    display: none !important;
 }
 .freel:hover {
     transform: translateY(-2px);
@@ -551,6 +662,87 @@ box-shadow:  4px 2px 0px #1a1a1a;
   background: linear-gradient(135deg, #17299b, #4f7cff, #17299b);
 
   z-index: -1;
+
+}
+.institute-heading{
+    display: flex;
+   margin-top: 18px;
+    align-items:center;
+    width: 96vw;
+    margin-right: 2vw;
+    margin-left: 2vw;
+    margin-bottom: 5px;
+}
+.educations{
+    margin-top: 18px !important;
+}
+.maal{
+    margin-top: 3px !important;
+}
+.loading{
+    background-color: goldenrod !important;
+}
+
+.institute-heading h2{
+
+  font-size: 1.2rem !important;
+
+  font-weight: 700;
+
+  line-height: 1.3;
+
+  margin: 0;
+
+ 
+}
+ .button{
+    margin-top: 13px !important;
+    
+  }
+.pa{
+    box-sizing: border-box;
+    padding-left: 12px ;
+    padding-right: 10px;
+    color: rgb(71, 71, 71);
+    padding-top: 12px;
+    font-size: 1.2rem;
+}
+.logo-box{
+
+  width: clamp(42px, 5vw, 70px);
+
+  height: clamp(42px, 5vw, 70px);
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+
+    135deg,
+
+    #f4b400,
+
+    #ffd95a
+
+  );
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  box-shadow: 0 4px 15px rgba(244,180,0,0.25);
+
+}
+.logo-icon{
+
+  width: 55%;
+
+  height: 55%;
+
+  color: #111;
 
 }
 
@@ -827,4 +1019,64 @@ box-shadow:  4px 2px 0px #1a1a1a;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 40px;
+}
+
+/* =============================================
+   EXPLORE BUTTON (EDUCATION SECTION)
+   ============================================= */
+.explore-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.explore-btn {
+    background: linear-gradient(135deg, #f4b400, #ffd95a);
+    color: #1a1a1a;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 14px 36px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(244, 180, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.explore-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(244, 180, 0, 0.45);
+    background: linear-gradient(135deg, #ffd95a, #f4b400);
+}
+
+.explore-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.explore-btn:hover svg {
+    transform: translateX(4px);
+}
+
+/* =============================================
+   DETAL SECTION ANIMATION
+   ============================================= */
+.detal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.detal.in-view {
+    opacity: 1;
+    transform: translateY(0);
 }

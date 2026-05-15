@@ -1,7 +1,7 @@
 import logu from "../assets/nyu.png";
 import pogu from "../assets/pgaph.png";
 import jogu from "../assets/image copy 3.jpeg";
-import { Download, ArrowRight , PenTool, Code2,Smartphone,BrainCircuit, ExternalLink } from "lucide-react";
+import { Download, ArrowRight , PenTool, Code2,Smartphone,BrainCircuit, ExternalLink,GraduationCap } from "lucide-react";
 import roject from "../assets/jioo.jpeg";
 import oject from "../assets/image copy 4.png";
 import ject from "../assets/image copy 5.png";
@@ -157,7 +157,7 @@ function Home() {
             { threshold: 0.15 }
         );
 
-        const elements = document.querySelectorAll('.scroll-anim-image, .project');
+        const elements = document.querySelectorAll('.scroll-anim-image, .project, .detal');
         elements.forEach((el) => observer.observe(el));
 
         return () => {
@@ -345,22 +345,54 @@ function Home() {
 
             </div>
 
-
+<h2 className="section-heading mar">
+  <span className="circi"></span>
+  Education and Learnings
+</h2>
+ <h2 className="titu mar">My knowledge in software</h2>
             <div className="educations" id="education">
-                <h1 className="peveal">Education and Learnings</h1>
-                <h2 className="peveal">My Knowledge Level in Software</h2>
-                <div className="subjects">
+                
+                <div className="ubjects">
                     {skills.map((skill, index) => (
                         <SkillBar key={index} {...skill} />
                     ))}
-                    {/* <Link className="ji"><div className="explore">
-                        Explore
-                    </div></Link> */}
+                   
                 </div>
-                <div className="button">
-                    <Link to="/education"><button className="explore">Explore more</button></Link>
+                <div className="detal">
+                    <div className="institute-heading">
+
+      <div className="logo-box">
+
+        <GraduationCap className="logo-icon" />
+
+      </div>
+
+      <h2>National Institute of Technology Kurukshetra</h2>
+
+    </div>
+                    <p className="pa"> Currently pursuing my engineering degree at one of India's premier technical institutions,
+                            focusing on buildind a strong foundation in computer science and technology.
+                            I am highly passionate about the ever-evolving world of technology.
+                            My journey is driven by a deep curiosity for how software shapes our future.
+                            I love exploring new programming languages and the logic behind complex systems.</p>
+                            <div className="explore-btn-container jhiku">
+                    <Link to="/education" style={{ textDecoration: 'none' }}>
+                        <button className="explore-btn">
+                            Explore more <ArrowRight size={18} />
+                        </button>
+                    </Link>
                 </div>
+                </div>
+
+               
             </div>
+             <div className="explore-btn-container chiku">
+                    <Link to="/education" style={{ textDecoration: 'none' }}>
+                        <button className="explore-btn">
+                            Explore more <ArrowRight size={18} />
+                        </button>
+                    </Link>
+                </div>
 
            
             <div className="photography photography-reveal" id="photography">
