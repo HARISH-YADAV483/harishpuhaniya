@@ -9,6 +9,8 @@ import Photo from "./components/photo";
 import Education from "./components/Education";
 import Portfolio from "./components/Portfolio";
 import logi from "./assets/cross.png";
+import CursorFollower from "./components/CursorFollower";
+
 
 function ScrollToHash() {
   const { hash } = useLocation();
@@ -40,6 +42,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
+      <CursorFollower />
       <ScrollToHash />
       <div className={`menubar ${showDiv ? "active" : ""}`}>
         <img src={logi} alt="ScamShield" className="logi" onClick={toggleDiv} />
