@@ -1,9 +1,10 @@
 import logu from "../assets/nyu.png";
 import pogu from "../assets/pgaph.png";
 import jogu from "../assets/blog.jpeg";
-import { Download, ArrowRight , PenTool, Code2,Smartphone,BrainCircuit, ExternalLink,GraduationCap } from "lucide-react";
+import { Download, ArrowRight, PenTool, Code2, Smartphone, BrainCircuit, ExternalLink, GraduationCap } from "lucide-react";
 import roject from "../assets/jioo.jpeg";
 import oject from "../assets/image copy 4.png";
+import face from "../assets/face.png";
 import ject from "../assets/image copy 5.png";
 import cv from "../assets/harishpuhaniyacv.pdf";
 import { Link } from "react-router-dom";
@@ -51,30 +52,30 @@ const SkillBar = ({ name, targetWidth, count }) => {
 };
 const services = [
     {
-      icon: <PenTool size={28} />,
-      title: "UI/UX Design",
-      desc: "Designing intuitive and engaging user experiences with pixel-perfect attention to detail.",
-      link: "/services#uiux",
+        icon: <PenTool size={28} />,
+        title: "UI/UX Design",
+        desc: "Designing intuitive and engaging user experiences with pixel-perfect attention to detail.",
+        link: "/services#uiux",
     },
     {
-      icon: <Code2 size={28} />,
-      title: "Web Development",
-      desc: "Building responsive, performant, and scalable web applications with modern technologies.",
-      link: "/services#webdev",
+        icon: <Code2 size={28} />,
+        title: "Web Development",
+        desc: "Building responsive, performant, and scalable web applications with modern technologies.",
+        link: "/services#webdev",
     },
     {
-      icon: <Smartphone size={28} />,
-      title: "Responsive Design",
-      desc: "Creating fluid layouts that deliver a seamless experience on every device and screen size.",
-      link: "/services#responsive",
+        icon: <Smartphone size={28} />,
+        title: "Responsive Design",
+        desc: "Creating fluid layouts that deliver a seamless experience on every device and screen size.",
+        link: "/services#responsive",
     },
     {
-      icon: <BrainCircuit size={28} />,
-      title: "AI Model Development",
-      desc: "Developing intelligent AI solutions and custom ML models for real-world applications.",
-      link: "/services#ai",
+        icon: <BrainCircuit size={28} />,
+        title: "AI Model Development",
+        desc: "Developing intelligent AI solutions and custom ML models for real-world applications.",
+        link: "/services#ai",
     },
-  ];
+];
 
 const ServiceCard = ({ service, index }) => {
     const [isVisible, setIsVisible] = useState(false);
@@ -143,6 +144,9 @@ function Home() {
     const [email, setemail] = useState("");
     const [message, setmessage] = useState("");
     const [isImageLoaded, setIsImageLoaded] = useState(false);
+    const [imggiHover, setImggiHover] = useState(false);
+    const [imggiPos, setImggiPos] = useState({ x: 0, y: 0 });
+    const imggiRef = useRef(null);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -189,7 +193,7 @@ function Home() {
 
         return () => waveObserver.disconnect();
     }, []);
-    
+
     const handleSend = async () => {
         setload(true);
         const formData = {
@@ -210,9 +214,9 @@ function Home() {
             const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5002";
             const { data } = await axios.post(`${API_BASE_URL}/api/contact`, formData);
 
-         setsubmission( data.message || "Thanks for Submission!");
-         setload(false);
-        //  alert(data.message || "Thanks for Submission!");
+            setsubmission(data.message || "Thanks for Submission!");
+            setload(false);
+            //  alert(data.message || "Thanks for Submission!");
 
             // Clear the form
             nameref.current.value = "";
@@ -242,69 +246,92 @@ function Home() {
     return (
         <div className="homee ">
             <div className=" profilew animate-fade-in-up ">
-               
+
                 <div className="para">
-                    <h1 className="hello animate-fade-in-up delay-2" style={{color:"rgb(241, 186, 2)" , fontWeight:"bold" , fontSize:"2.6rem"}}>Hello, <span ref={waveRef} className={`wave-emoji${isWaving ? ' waving' : ''}`}>👋</span></h1>
+                    <h1 className="hello animate-fade-in-up delay-2" style={{ color: "rgb(241, 186, 2)", fontWeight: "bold", fontSize: "2.6rem" }}>Hello, <span ref={waveRef} className={`wave-emoji${isWaving ? ' waving' : ''}`}>👋</span></h1>
                     <h3 className="bit animate-fade-in-up delay-2">I'm Harish Puhaniya</h3>
                     <p className="pai animate-fade-in-up delay-3">
-                       I’m Harish Puhaniya, a UI/UX Designer and Web Developer currently pursuing a B.Tech in Information Technology at National Institute of Technology Kurukshetra. Passionate about creating user-centered digital experiences, I enjoy combining clean design with functional development to build modern and impactful web solutions.</p>
+                        I’m Harish Puhaniya, a UI/UX Designer and Web Developer currently pursuing a B.Tech in Information Technology at National Institute of Technology Kurukshetra. Passionate about creating user-centered digital experiences, I enjoy combining clean design with functional development to build modern and impactful web solutions.</p>
                     {/* freel: visible for >=450px inside para */}
                     <div className="freel freel-inside" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-                      <h3 style={{display:"flex", justifyContent:"center", gap:"12px" , alignItems:"center"}}><div className="blink"></div>Freelancer</h3>
-                      <p>Book now </p>
+                        <h3 style={{ display: "flex", justifyContent: "center", gap: "12px", alignItems: "center" }}><div className="blink"></div>Freelancer</h3>
+                        <p>Book now </p>
                     </div>
                     {/* action buttons: visible only on >=750px inside para */}
                     <div className="action-btns action-btns-inside">
-                      <a href={cv} download="harishpuhaniyacv.pdf" className="action-btn" style={{ textDecoration: 'none', color: '#1a1a1a' }}>Download CV <Download size={18} /></a>
-                      <div className="action-btn" onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}>See My Work <ArrowRight size={18} /></div>
+                        <a href={cv} download="harishpuhaniyacv.pdf" className="action-btn" style={{ textDecoration: 'none', color: '#1a1a1a' }}>Download CV <Download size={18} /></a>
+                        <div className="action-btn" onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}>See My Work <ArrowRight size={18} /></div>
                     </div>
                 </div>
-                 <div className={`imgg animate-fade-in-up delay-1  ${!isImageLoaded ? 'skeleton-loading' : ''}` } >
-                    <img 
-                        src={logu} 
-                        alt="ScamShield" 
-                        className={`logu rama  ${isImageLoaded ? 'loaded' : 'loading'}`} 
-                        onLoad={() => setIsImageLoaded(true)} 
+                <div
+                    className={`imgg animate-fade-in-up delay-1  ${!isImageLoaded ? 'skeleton-loading' : ''}`}
+                    onMouseMove={(e) => {
+                        if (imggiRef.current) {
+                            const rect = imggiRef.current.getBoundingClientRect();
+                            setImggiPos({
+                                x: e.clientX - rect.left,
+                                y: e.clientY - rect.top,
+                            });
+                        }
+                    }}
+                    onMouseEnter={() => setImggiHover(true)}
+                    onMouseLeave={() => setImggiHover(false)}
+                >
+                    <img
+                        src={logu}
+                        alt="ScamShield"
+                        className={`logu rama  ${isImageLoaded ? 'loaded' : 'loading'}`}
+                        onLoad={() => setIsImageLoaded(true)}
+                    />
+                    <img
+                        ref={imggiRef}
+                        src={face}
+                        alt=""
+                        className={`imggi ${imggiHover ? 'imggi--visible' : ''}`}
+                        style={{
+                            '--spot-x': `${imggiPos.x}px`,
+                            '--spot-y': `${imggiPos.y}px`,
+                        }}
                     />
                 </div>
             </div>
-<p className="pao animate-fade-in-up delay-3">
-                       I’m Harish Puhaniya, a UI/UX Designer and Web Developer currently pursuing a B.Tech in Information Technology at National Institute of Technology Kurukshetra. Passionate about creating user-centered digital experiences, I enjoy combining clean design with functional development to build modern and impactful web solutions.
-                    </p>
+            <p className="pao animate-fade-in-up delay-3">
+                I’m Harish Puhaniya, a UI/UX Designer and Web Developer currently pursuing a B.Tech in Information Technology at National Institute of Technology Kurukshetra. Passionate about creating user-centered digital experiences, I enjoy combining clean design with functional development to build modern and impactful web solutions.
+            </p>
             {/* freel for <450px: outside profilew, below it */}
             <div className="freel freel-outside" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-              <h3 style={{display:"flex", justifyContent:"center", gap:"12px" , alignItems:"center"}}><div className="blink"></div>Freelancer</h3>
-              <p>Book now </p>
+                <h3 style={{ display: "flex", justifyContent: "center", gap: "12px", alignItems: "center" }}><div className="blink"></div>Freelancer</h3>
+                <p>Book now </p>
             </div>
 
             {/* action buttons for <=749px: below profilew */}
             <div className="action-btns action-btns-outside">
-              <a href={cv} download="harishpuhaniyacv.pdf" className="action-btn" style={{ textDecoration: 'none', color: '#1a1a1a' }}>Download CV <Download size={18} /></a>
-              <div className="action-btn" onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}>See My Work <ArrowRight size={18} /></div>
+                <a href={cv} download="harishpuhaniyacv.pdf" className="action-btn" style={{ textDecoration: 'none', color: '#1a1a1a' }}>Download CV <Download size={18} /></a>
+                <div className="action-btn" onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}>See My Work <ArrowRight size={18} /></div>
             </div>
-           <h2 className="section-heading mar">
-  <span className="circi"></span>
-  What I Do
-</h2>
- <h2 className="titu mar">Services I Provide</h2>
- <div className="services-grid">
-      {services.map((service, index) => (
-        <ServiceCard key={index} service={service} index={index} />
-      ))}
-    </div>
+            <h2 className="section-heading mar">
+                <span className="circi"></span>
+                What I Do
+            </h2>
+            <h2 className="titu mar">Services I Provide</h2>
+            <div className="services-grid">
+                {services.map((service, index) => (
+                    <ServiceCard key={index} service={service} index={index} />
+                ))}
+            </div>
 
 
-     <div className="portfolo" id="portfolio">
+            <div className="portfolo" id="portfolio">
                 <h2 className="section-heading mar">
-  <span className="circi"></span>
- PORTFOLIO
-</h2>
- <h2 className="titu mar">My Latest Works</h2>
-                
+                    <span className="circi"></span>
+                    PORTFOLIO
+                </h2>
+                <h2 className="titu mar">My Latest Works</h2>
+
                 <div className="prjects">
                     <div className="project" style={{ transitionDelay: '0ms' }}>
                         <div className="project-image">
-                            <img src={roject} alt="Scamshield" className="roject-img"/>
+                            <img src={roject} alt="Scamshield" className="roject-img" />
                         </div>
                         <div className="project-details">
                             <h3 className="project-title">Scamshield</h3>
@@ -316,7 +343,7 @@ function Home() {
                     </div>
                     <div className="project" style={{ transitionDelay: '200ms' }}>
                         <div className="project-image">
-                            <img src={oject} alt="Scamshield" className="roject-img"/>
+                            <img src={oject} alt="Scamshield" className="roject-img" />
                         </div>
                         <div className="project-details">
                             <h3 className="project-title">Hostel Web-Portal</h3>
@@ -328,7 +355,7 @@ function Home() {
                     </div>
                     <div className="project" style={{ transitionDelay: '400ms' }}>
                         <div className="project-image">
-                            <img src={ject} alt="Scamshield" className="roject-img"/>
+                            <img src={ject} alt="Scamshield" className="roject-img" />
                         </div>
                         <div className="project-details">
                             <h3 className="project-title">BlogCHIT</h3>
@@ -339,67 +366,67 @@ function Home() {
                         </div>
                     </div>
                 </div>
-                
+
                 <div className="all-works-btn-container">
                     <h2 className="peveal">MY ALL WORKS <span><Link to="/projects" className="see-more">CLICK HERE</Link></span></h2>
                 </div>
 
             </div>
 
-<h2 className="section-heading mar">
-  <span className="circi"></span>
-  Education and Learnings
-</h2>
- <h2 className="titu mar">My knowledge in software</h2>
+            <h2 className="section-heading mar">
+                <span className="circi"></span>
+                Education and Learnings
+            </h2>
+            <h2 className="titu mar">My knowledge in software</h2>
             <div className="educations" id="education">
-                
+
                 <div className="ubjects">
                     {skills.map((skill, index) => (
                         <SkillBar key={index} {...skill} />
                     ))}
-                   
+
                 </div>
                 <div className="detal">
                     <div className="institute-heading">
 
-      <div className="logo-box">
+                        <div className="logo-box">
 
-        <GraduationCap className="logo-icon" />
+                            <GraduationCap className="logo-icon" />
 
-      </div>
+                        </div>
 
-      <h2>National Institute of Technology Kurukshetra</h2>
+                        <h2>National Institute of Technology Kurukshetra</h2>
 
-    </div>
+                    </div>
                     <p className="pa"> Currently pursuing my engineering degree at one of India's premier technical institutions,
-                            focusing on buildind a strong foundation in computer science and technology.
-                            I am highly passionate about the ever-evolving world of technology.
-                            My journey is driven by a deep curiosity for how software shapes our future.
-                            I love exploring new programming languages and the logic behind complex systems.</p>
-                            <div className="explore-btn-container jhiku">
-                    <Link to="/education" style={{ textDecoration: 'none' }}>
-                        <button className="explore-btn">
-                            Explore more <ArrowRight size={18} />
-                        </button>
-                    </Link>
-                </div>
+                        focusing on buildind a strong foundation in computer science and technology.
+                        I am highly passionate about the ever-evolving world of technology.
+                        My journey is driven by a deep curiosity for how software shapes our future.
+                        I love exploring new programming languages and the logic behind complex systems.</p>
+                    <div className="explore-btn-container jhiku">
+                        <Link to="/education" style={{ textDecoration: 'none' }}>
+                            <button className="explore-btn">
+                                Explore more <ArrowRight size={18} />
+                            </button>
+                        </Link>
+                    </div>
                 </div>
 
-               
+
             </div>
-             <div className="explore-btn-container chiku">
-                    <Link to="/education" style={{ textDecoration: 'none' }}>
-                        <button className="explore-btn">
-                            Explore more <ArrowRight size={18} />
-                        </button>
-                    </Link>
-                </div>
+            <div className="explore-btn-container chiku">
+                <Link to="/education" style={{ textDecoration: 'none' }}>
+                    <button className="explore-btn">
+                        Explore more <ArrowRight size={18} />
+                    </button>
+                </Link>
+            </div>
 
-           <h2 className="section-heading mar">
-  <span className="circi"></span>
-HOBBIES
-</h2>
- <h2 className="titu mar">Hobbies and Personal Interset</h2>
+            <h2 className="section-heading mar">
+                <span className="circi"></span>
+                HOBBIES
+            </h2>
+            <h2 className="titu mar">Hobbies and Personal Interset</h2>
             <div className="photography photography-reveal" id="photography">
                 <div className="pgraphy image-reveal">
                     <img src={pogu} alt="ScamShield" className="pogu scroll-anim-image" />
@@ -433,10 +460,10 @@ HOBBIES
                     <div className="parac">
                         <h1>Contact</h1>
                         <p>If you’d like to get in touch, feel free to contact me anytime.
-                             I’m always open to discussing new ideas, projects, collaborations,
-                              or answering your questions. Your feedback and suggestions are highly
-                               appreciated. You can reach out through email, phone, or social media,
-                             and I’ll do my best to respond as quickly as possible.</p>
+                            I’m always open to discussing new ideas, projects, collaborations,
+                            or answering your questions. Your feedback and suggestions are highly
+                            appreciated. You can reach out through email, phone, or social media,
+                            and I’ll do my best to respond as quickly as possible.</p>
                         <p>+91 8396029503
                             <br />
                             harishpuhaniya@gmail.com
@@ -462,11 +489,11 @@ HOBBIES
                     <div className="submit"><button onClick={handleSend}>Send</button></div>
                 </div>
             </div>
-          {load && (
-  <div className=" joko" >
-  <span className="visually-hidden">Sending...</span>
-</div>
-)}
+            {load && (
+                <div className=" joko" >
+                    <span className="visually-hidden">Sending...</span>
+                </div>
+            )}
             <h3>{name}</h3>
             <h3>{lastname}</h3>
             <h3>{number}</h3>
