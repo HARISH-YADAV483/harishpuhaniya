@@ -126,7 +126,7 @@ function Home() {
         { name: "JAVASCRIPT", targetWidth: "90%", count: "90%" },
         { name: "REACT", targetWidth: "90%", count: "90%" },
         { name: "NODE.JS", targetWidth: "75%", count: "75%" },
-        { name: "HTML CSS", targetWidth: "95%", count: "95%" },
+        { name: "mongoDB", targetWidth: "70%", count: "70%" },
     ];
     const waveRef = useRef(null);
     const [isWaving, setIsWaving] = useState(false);
@@ -137,7 +137,7 @@ function Home() {
     const messageref = useRef(null);
 
     const [name, setname] = useState("");
-    const [load, setload] = useState(false);
+    const [sendStatus, setSendStatus] = useState("idle"); // 'idle' | 'sending' | 'success'
     const [submission, setsubmission] = useState("");
     const [lastname, setlastname] = useState("");
     const [number, setnumber] = useState("");
@@ -195,7 +195,6 @@ function Home() {
     }, []);
 
     const handleSend = async () => {
-        setload(true);
         const formData = {
             name: nameref.current.value,
             lastname: lastnameref.current.value,
@@ -205,18 +204,18 @@ function Home() {
         };
 
         if (!formData.name || !formData.lastname || !formData.email) {
-            setload(false);
             alert("Please fill in all required fields (Name, Lastname, and Email).");
             return;
         }
+
+        setSendStatus("sending");
 
         try {
             const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5002";
             const { data } = await axios.post(`${API_BASE_URL}/api/contact`, formData);
 
             setsubmission(data.message || "Thanks for Submission!");
-            setload(false);
-            //  alert(data.message || "Thanks for Submission!");
+            setSendStatus("success");
 
             // Clear the form
             nameref.current.value = "";
@@ -229,8 +228,13 @@ function Home() {
             setnumber("");
             setemail("");
             setmessage("");
+
+            // Reset back to Send after 3 seconds
+            setTimeout(() => {
+                setSendStatus("idle");
+            }, 3000);
         } catch (error) {
-            // setload(false);
+            setSendStatus("idle");
             console.error("Error sending contact:", error);
             const msg = error.response?.data?.message || "Failed to send contact information. Please check if the backend is running.";
             alert(msg);
@@ -486,14 +490,15 @@ function Home() {
                     <div className="message">
                         <input type="text" placeholder="message" ref={messageref} />
                     </div>
-                    <div className="submit"><button onClick={handleSend}>Send</button></div>
+                    <div className="submit">
+                        <button onClick={handleSend} disabled={sendStatus === "sending"}>
+                            {sendStatus === "idle" && "Send"}
+                            {sendStatus === "sending" && "sending...."}
+                            {sendStatus === "success" && "sent successfully"}
+                        </button>
+                    </div>
                 </div>
             </div>
-            {load && (
-                <div className=" joko" >
-                    <span className="visually-hidden">Sending...</span>
-                </div>
-            )}
             <h3>{name}</h3>
             <h3>{lastname}</h3>
             <h3>{number}</h3>
