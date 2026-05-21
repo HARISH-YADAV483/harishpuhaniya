@@ -4,7 +4,7 @@ import jogu from "../assets/blog.jpeg";
 import { Download, ArrowRight, PenTool, Code2, Smartphone, BrainCircuit, ExternalLink, GraduationCap } from "lucide-react";
 import roject from "../assets/jioo.jpeg";
 import oject from "../assets/image copy 4.png";
-import face from "../assets/face.png";
+import face from "../assets/facee.png";
 import ject from "../assets/image copy 5.png";
 import cv from "../assets/harishpuhaniyacv.pdf";
 import { Link } from "react-router-dom";

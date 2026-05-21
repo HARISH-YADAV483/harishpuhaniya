@@ -447,9 +447,9 @@
     }
 
     .imggi {
-        width: 28vw;
+        width: 24vw;
         position: absolute;
-        right: 7vw;
+        right: 10vw;
         top: -1vh;
         padding-top: 0vh;
         transform: rotate(-20deg);
