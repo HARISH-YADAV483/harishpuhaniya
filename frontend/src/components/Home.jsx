@@ -6,7 +6,7 @@ import roject from "../assets/jioo.jpeg";
 import oject from "../assets/image copy 4.png";
 import face from "../assets/facee.png";
 import ject from "../assets/image copy 5.png";
-import cv from "../assets/harishpuhaniyacv.pdf";
+import cv from "../assets/harishpuhaniya.pdf";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
