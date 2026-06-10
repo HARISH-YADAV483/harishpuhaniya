@@ -112,10 +112,8 @@ const ServiceCard = ({ service, index }) => {
                 {service.icon}
             </div>
             <h3 className="service-card__title">{service.title}</h3>
-            <p className="service-card__desc">{service.desc}</p>
-            <Link to="#portfolio" onClick={(e) => { e.preventDefault(); document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' }); }} className="service-card__link">
-                Learn More <ArrowRight size={15} />
-            </Link>
+        
+            
         </div>
     );
 };

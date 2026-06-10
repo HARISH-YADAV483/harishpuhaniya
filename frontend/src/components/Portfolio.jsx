@@ -3,6 +3,7 @@ import "./Portfolio.css";
 import hostelImg from "../assets/hostel.png";
 import projectImg from "../assets/project.png";
 import personalImg from "../assets/personal.png";
+import blogchitImg from "../assets/image copy 5.png";
 
 const Portfolio = () => {
     const projects = [
@@ -19,8 +20,16 @@ const Portfolio = () => {
             title: "Scam-Protection App",
             description: "ScamShield is a full-stack web platform designed to detect, analyze, and prevent online scams. It evaluates suspicious content using AI, verifies domains, and cross-checks scammer data to generate a real-time scam score with actionable insights for users.",
             image: projectImg,
-            link: "https://scamshiild-2.onrender.com/",
+            link: "https://hackrustfinal.onrender.com/",
             tags: ["React", "API", "CSS", "AI", "express.js"]
+        },
+        {
+            id: 3,
+            title: "BlogChit",
+            description: "BlogChit is a full-stack blogging and social networking platform that combines content creation, community engagement, and real-time communication in a single ecosystem. Users can write and publish rich-text blogs, interact through likes, comments, bookmarks, and follows, join public or private communities, and communicate via real-time one-to-one and group chats. The platform also features a global search engine, notification system, media sharing, and an admin moderation workflow that ensures content quality through a verification process before publication. Built with React, Node.js, MongoDB, Socket.io, Cloudinary, and Resend, BlogChit delivers a scalable and interactive user experience for both readers and creators.",
+            image: blogchitImg,
+            link: "https://blogchit.onrender.com/",
+            tags: ["React", "API", "CSS", "Socket.io", "express.js", "MongoDB"]
         },
 
         {

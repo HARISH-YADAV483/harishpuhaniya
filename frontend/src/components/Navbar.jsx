@@ -6,7 +6,7 @@ const Navbar = ({ toggleDiv }) => (
     <nav className="navbar">
         <div className="lefto">
             <div className="circle"></div>
-            <div className="name" style={{fontSize:"1.6rem"}}> <Link to="/"  className="blacki">Harish Puhaniya</Link></div>
+            <div className="name" style={{fontSize:"1.4rem"}}> <Link to="/"  className="blacki">Harish Puhaniya</Link></div>
         </div>
         <div className="righto">
             <Link to="/#education" className="nav-link">Education</Link>
