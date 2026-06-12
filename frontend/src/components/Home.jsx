@@ -298,7 +298,7 @@ function Home() {
                 </div>
             </div>
             <p className="pao animate-fade-in-up delay-3">
-                I’m Harish Puhaniya, a UI/UX Designer and Web Developer currently pursuing a B.Tech in Information Technology at National Institute of Technology Kurukshetra. Passionate about creating user-centered digital experiences, I enjoy combining clean design with functional development to build modern and impactful web solutions.
+                I’m Harish Puhaniya, a UI/UX Designer and Web Developer currently pursuing a B.Tech in Information Technology at National Institute of Technology Kurukshetra. 
             </p>
             {/* freel for <450px: outside profilew, below it */}
             <div className="freel freel-outside" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
