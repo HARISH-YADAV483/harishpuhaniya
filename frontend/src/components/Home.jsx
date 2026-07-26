@@ -1,4 +1,4 @@
-import logu from "../assets/nyu.png";
+import logu from "../assets/nyu.jpeg";
 import pogu from "../assets/pgaph.png";
 import jogu from "../assets/blog.jpeg";
 import { Download, ArrowRight, PenTool, Code2, Smartphone, BrainCircuit, ExternalLink, GraduationCap } from "lucide-react";

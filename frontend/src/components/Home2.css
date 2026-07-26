@@ -1,7 +1,16 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
-
+.bit{
+    font-family: "Uncial Antiqua", system-ui;
+  font-weight: 00;
+  font-style: normal;
+}
+.hello{
+    font-family: "Uncial Antiqua", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
 .contact {
     margin-top: 44px !important;
     /* border-top: 1px solid goldenrod; */
