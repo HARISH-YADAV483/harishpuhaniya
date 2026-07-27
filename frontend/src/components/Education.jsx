@@ -159,7 +159,12 @@ function SkillRow({ name, pct, delay = 0 }) {
   );
 }
 
-const Education = () => (
+const Education = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, []);
+
+  return (
   <div className="pf-root">
     <MiniNav active="stack" />
     <div className="pf-ticker">
@@ -279,6 +284,7 @@ const Education = () => (
       }
     `}</style>
   </div>
-);
+  );
+};
 
 export default Education;
