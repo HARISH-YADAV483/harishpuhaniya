@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 import hostelImg from "../assets/hostel.webp";
 import projectImg from "../assets/project.webp";
 import personalImg from "../assets/personal.webp";
+import bj from "../assets/beejspray.webp";
 import blogchitImg from "../assets/image copy 5.webp";
+
+
+import City from "../assets/screen.webp";
 import "./PortfolioNew.css";
 
 /* ── shared mini-navbar ─────────────────────────────────── */
@@ -63,13 +67,36 @@ const PROJECTS = [
   },
   {
     id: 2,
-    title: "Scam-Protection App",
-    description: "ScamShield is a full-stack platform that detects and prevents online scams. It evaluates suspicious content using AI, verifies domains, and generates a real-time scam score.",
-    image: projectImg,
-    link: "https://hackrustfinal.onrender.com/",
-    tags: ["React", "API", "CSS", "AI", "Express.js"],
+    title: "Production E-Commerce Platform",
+    description: "Contributed as a Full Stack Developer to a production-grade e-commerce platform for a real client. Built and enhanced features across the frontend and backend, integrated APIs, worked with PostgreSQL, and collaborated with an experienced development team.",
+    image: bj,
+    link: "#",
+   tags: [
+
+  "React",
+
+  "Node.js",
+
+  "Express.js",
+
+  "PostgreSQL",
+
+  "JavaScript",
+
+  "REST API",
+
+  "JWT",
+
+  "Razorpay",
+
+  "Gemini API",
+
+  "Git"
+
+],
     year: "2024",
   },
+  
   {
     id: 3,
     title: "BlogChit",
@@ -87,6 +114,49 @@ const PROJECTS = [
     link: "#",
     tags: ["React", "CSS", "Express", "Vite"],
     year: "2026",
+  },
+  {
+    id: 5,
+    title: "City Web Portal",
+    description: "Developed a full-stack city portal that serves as a centralized hub for residents to access community updates, local services, important notices, and civic information through an intuitive and responsive interface.",
+    image: City,
+    link: "https://mallitibba.onrender.com/",
+    tags:[
+
+  "React",
+
+  "Vite",
+
+  "Node.js",
+
+  "Express.js",
+
+  "MongoDB",
+
+  "JavaScript",
+
+  "HTML5",
+
+  "CSS3",
+
+  "REST API",
+
+  "JWT",
+
+  "Responsive Design",
+  "i18n"
+
+]
+   
+  },
+  {
+    id: 6,
+    title: "Scam-Protection App",
+    description: "ScamShield is a full-stack platform that detects and prevents online scams. It evaluates suspicious content using AI, verifies domains, and generates a real-time scam score.",
+    image: projectImg,
+    link: "https://hackrustfinal.onrender.com/",
+    tags: ["React", "API", "CSS", "AI", "Express.js"],
+    year: "2024",
   },
 ];
 
@@ -136,53 +206,59 @@ function ProjectCard({ project, index }) {
   );
 }
 
-const Portfolio = () => (
-  <div className="pf-root">
-    <MiniNav active="work" />
-    {/* Ticker */}
-    <div className="pf-ticker">
-      <div className="pf-ticker-track">
-        {["React", "Node.js", "MongoDB", "Express.js", "Socket.io", "AI", "Tailwind", "Vite", "CSS", "Next.js",
-          "React", "Node.js", "MongoDB", "Express.js", "Socket.io", "AI", "Tailwind", "Vite", "CSS", "Next.js"].map((t, i) => (
-          <span key={i} className="pf-ticker-item">{t}</span>
-        ))}
+const Portfolio = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, []);
+
+  return (
+    <div className="pf-root">
+      <MiniNav active="work" />
+      {/* Ticker */}
+      <div className="pf-ticker">
+        <div className="pf-ticker-track">
+          {["React", "Node.js", "MongoDB", "Express.js", "Socket.io", "AI", "Tailwind", "Vite", "CSS", "Next.js",
+            "React", "Node.js", "MongoDB", "Express.js", "Socket.io", "AI", "Tailwind", "Vite", "CSS", "Next.js"].map((t, i) => (
+            <span key={i} className="pf-ticker-item">{t}</span>
+          ))}
+        </div>
       </div>
+
+      <main className="pf-main">
+        {/* Header */}
+        <section style={{ padding: "40px 2px 0", borderBottom: "1px solid var(--border)" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 40 }}>
+            <div>
+              <span className="pf-section-label" style={{ display: "block", marginBottom: 20 }}>
+                № 001 — Selected Work
+              </span>
+              <h1 style={{
+                fontFamily: "var(--serif)", fontSize: "clamp(3.5rem, 9vw, 8rem)",
+                fontWeight: 600, lineHeight: 0.9, display: "flex", alignItems: "baseline", gap: 16, flexWrap: "wrap"
+              }}>
+                <span style={{ color: "var(--text-primary)" }}>The</span>
+                <span style={{ color: "var(--accent)", fontStyle: "italic" }}>Archive</span>
+              </h1>
+            </div>
+            <div style={{ textAlign: "right" }}>
+              <span className="pf-archive-count">{PROJECTS.length} Entries</span>
+              <span className="pf-archive-years" style={{ display: "block" }}>2023 — 2026</span>
+            </div>
+          </div>
+
+          <div className="pf-projects-grid" style={{ marginTop: 0, marginBottom: 48 }}>
+            {PROJECTS.map((p, i) => <ProjectCard key={p.id} project={p} index={i} />)}
+          </div>
+        </section>
+
+        {/* Footer strip */}
+        <footer className="pf-footer">
+          <span className="pf-footer-copy">© {new Date().getFullYear()} Harish Puhaniya</span>
+          <Link to="/" className="pf-browse-btn" style={{ fontSize: "0.55rem" }}>← Back to Home</Link>
+        </footer>
+      </main>
     </div>
-
-    <main className="pf-main">
-      {/* Header */}
-      <section style={{ padding: "40px 32px 0", borderBottom: "1px solid var(--border)" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 40 }}>
-          <div>
-            <span className="pf-section-label" style={{ display: "block", marginBottom: 20 }}>
-              № 001 — Selected Work
-            </span>
-            <h1 style={{
-              fontFamily: "var(--serif)", fontSize: "clamp(3.5rem, 9vw, 8rem)",
-              fontWeight: 600, lineHeight: 0.9, display: "flex", alignItems: "baseline", gap: 16, flexWrap: "wrap"
-            }}>
-              <span style={{ color: "var(--text-primary)" }}>The</span>
-              <span style={{ color: "var(--accent)", fontStyle: "italic" }}>archive</span>
-            </h1>
-          </div>
-          <div style={{ textAlign: "right" }}>
-            <span className="pf-archive-count">{PROJECTS.length} Entries</span>
-            <span className="pf-archive-years" style={{ display: "block" }}>2023 — 2026</span>
-          </div>
-        </div>
-
-        <div className="pf-projects-grid" style={{ marginTop: 0, marginBottom: 48 }}>
-          {PROJECTS.map((p, i) => <ProjectCard key={p.id} project={p} index={i} />)}
-        </div>
-      </section>
-
-      {/* Footer strip */}
-      <footer className="pf-footer">
-        <span className="pf-footer-copy">© {new Date().getFullYear()} Harish Puhaniya</span>
-        <Link to="/" className="pf-browse-btn" style={{ fontSize: "0.55rem" }}>← Back to Home</Link>
-      </footer>
-    </main>
-  </div>
-);
+  );
+};
 
 export default Portfolio;

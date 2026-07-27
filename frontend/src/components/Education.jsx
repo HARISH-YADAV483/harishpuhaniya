@@ -199,7 +199,7 @@ const Education = () => {
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, borderBottom: "1px solid var(--border)" }}
         className="edu-two-col">
         {/* Left — education cards */}
-        <div style={{ padding: "40px 32px", borderRight: "1px solid var(--border)" }}>
+        <div style={{ padding: "40px 4px", borderRight: "1px solid var(--border)" }}>
           <span className="pf-section-label" style={{ display: "block", marginBottom: 24 }}>§ Credentials</span>
 
           <InfoCard number={1} label="Degree" delay={0}>

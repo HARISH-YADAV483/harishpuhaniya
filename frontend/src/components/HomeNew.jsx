@@ -11,6 +11,7 @@ import roject from "../assets/jioo.jpeg";
 import oject from "../assets/image copy 4.webp";
 import ject from "../assets/image copy 5.webp";
 import cv from "../assets/harishpuhaniyacv.pdf";
+import bj from "../assets/beejspray.webp";
 import "./PortfolioNew.css";
 
 /* ── Ticker items (duplicated for seamless loop) ────────── */
@@ -45,6 +46,12 @@ const SERVICES = [
 
 /* ── Projects ───────────────────────────────────────────── */
 const PROJECTS = [
+  {
+    img: bj,
+    title: "Production E-Commerce Platform",
+
+    desc: "Contributed as a Full Stack Developer to a production-grade e-commerce platform for a real client. Built and enhanced features across the frontend and backend, integrated APIs, worked with PostgreSQL, and collaborated with an experienced development team.",
+  },
   {
     img: roject,
     title: "Scamshield",
