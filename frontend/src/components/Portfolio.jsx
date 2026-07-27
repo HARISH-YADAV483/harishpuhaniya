@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import hostelImg from "../assets/hostel.png";
-import projectImg from "../assets/project.png";
-import personalImg from "../assets/personal.png";
-import blogchitImg from "../assets/image copy 5.png";
+import hostelImg from "../assets/hostel.webp";
+import projectImg from "../assets/project.webp";
+import personalImg from "../assets/personal.webp";
+import blogchitImg from "../assets/image copy 5.webp";
 import "./PortfolioNew.css";
 
 /* ── shared mini-navbar ─────────────────────────────────── */

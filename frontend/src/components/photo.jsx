@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import pogu from "../assets/pgaph.png";
+import pogu from "../assets/pgaph.webp";
 import "./PortfolioNew.css";
 
 /* ── shared mini-navbar ─────────────────────────────────── */

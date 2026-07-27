@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import jroject from "../assets/hero.png";
+import jroject from "../assets/hero.webp";
 import "./PortfolioNew.css";
 
 /* ── shared mini-navbar ─────────────────────────────────── */

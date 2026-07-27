@@ -4,13 +4,13 @@ import axios from "axios";
 import {
   PenTool, Code2, Smartphone, BrainCircuit, ArrowRight, Download
 } from "lucide-react";
-import logu from "../assets/nyu.jpeg";
-import pogu from "../assets/pgaph.png";
-import jogu from "../assets/blog.jpeg";
+import logu from "../assets/image copy 2.webp";
+import pogu from "../assets/pgaph.webp";
+import jogu from "../assets/pgraphy.webp";
 import roject from "../assets/jioo.jpeg";
-import oject from "../assets/image copy 4.png";
-import ject from "../assets/image copy 5.png";
-import cv from "../assets/harishpuhaniya.pdf";
+import oject from "../assets/image copy 4.webp";
+import ject from "../assets/image copy 5.webp";
+import cv from "../assets/harishpuhaniyacv.pdf";
 import "./PortfolioNew.css";
 
 /* ── Ticker items (duplicated for seamless loop) ────────── */
